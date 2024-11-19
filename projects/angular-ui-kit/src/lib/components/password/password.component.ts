@@ -55,6 +55,11 @@ export class PasswordComponent {
   passwordVisible: boolean = false;
   passwordStrength: 'weak' | 'medium' | 'good' | 'great' = 'weak';
   strengthPercentage: number = 0;
+  isTooltipVisible: boolean = false;
+
+  toggleTooltip() {
+    this.isTooltipVisible = !this.isTooltipVisible;  
+  }
 
   /**
    * Toggle password visibility (show/hide).

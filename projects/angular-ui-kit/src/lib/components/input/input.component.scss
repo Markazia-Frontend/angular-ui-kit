@@ -1,0 +1,80 @@
+@import '../../styles/_colors.scss';
+
+$input-padding-small: 8px 10px;
+$input-padding-medium: 10px 12px;
+$input-padding-big: 16px 12px;
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input-label {
+  font-size: 14px;
+  color: $brand-600;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input {
+  border: 1px solid $brand-400;
+  border-radius: 8px;
+  padding: $input-padding-medium;
+  font-size: 16px;
+  outline: none;
+  width: 100%; 
+
+  &.input-small {
+    font-size: 14px;
+    padding: $input-padding-small;
+  }
+
+  &.input-medium {
+    padding: $input-padding-medium;
+  }
+
+  &.input-big {
+    padding: $input-padding-big;
+  }
+
+  &:focus {
+    border: 2px solid $brand-100;
+  }
+
+  &.input-valid {
+    border-color: $brand-400;
+  }
+
+  &.input-invalid {
+    border-color: $rose-400;
+  }
+
+  &.input-disabled {
+    background-color: $brand-200;
+    cursor: not-allowed;
+  }
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; 
+
+  &.input-icon-left {
+    left: 10px;
+  }
+
+  &.input-icon-right {
+    right: 10px;
+  }
+}
+
+.error-message {
+  color: $rose-600;
+  font-size: 12px;
+  margin-top: 1px;
+}

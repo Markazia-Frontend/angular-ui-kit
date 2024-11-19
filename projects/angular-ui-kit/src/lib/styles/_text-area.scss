@@ -1,0 +1,14 @@
+@import './_colors.scss';
+
+// Global textarea styles
+.textarea {
+  width: 200px;
+  height: 100px;
+  border: 1px solid  $brand-400;
+  color: $brand-700;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  outline: none;
+  resize: none;
+}

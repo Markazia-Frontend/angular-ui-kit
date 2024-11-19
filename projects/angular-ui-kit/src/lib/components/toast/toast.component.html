@@ -1,0 +1,10 @@
+<div class="toast" [ngClass]="toastType" *ngIf="isVisible">
+    <div class="toast-icon">
+        <img *ngIf="toastType === 'success'" src="assets/icons/check-circle.svg" alt="Success" />
+        <img *ngIf="toastType === 'error'" src="assets/icons/x-circle.svg" alt="Error" />
+    </div>
+    <div class="toast-message">
+        <p>{{ message }}</p>
+    </div>
+    <button class="toast-close" (click)="closeToast()">X</button>
+</div>

@@ -1,0 +1,32 @@
+<div class="input-container">
+    <label *ngIf="label" class="input-label">{{ label }}</label>
+    <div class="input-wrapper">
+      <!-- Left icon -->
+      <span *ngIf="iconLeft" class="input-icon input-icon-left">
+        <i [class]="iconLeft"></i>
+      </span>
+  
+      <input
+        type="text"
+        [placeholder]="placeholder"
+        [disabled]="disabled"
+        [ngClass]="{
+          'input': true,
+          'input-small': size === 'small',
+          'input-medium': size === 'medium',
+          'input-big': size === 'big',
+          'input-valid': isValid,
+          'input-invalid': !isValid && errorMessage,
+          'input-active': isActive
+        }"
+        (input)="handleInputChange($event)"
+      />
+  
+      <!-- Right icon -->
+      <span *ngIf="iconRight" class="input-icon input-icon-right">
+        <i [class]="iconRight"></i>
+      </span>
+    </div>
+    <div *ngIf="!isValid && errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+  

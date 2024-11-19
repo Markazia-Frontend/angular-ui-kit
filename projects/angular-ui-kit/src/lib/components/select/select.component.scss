@@ -1,0 +1,109 @@
+@import '../../styles/_colors.scss';
+
+/* General Dropdown Container */
+.dropdown-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+  }
+  
+  /* Dropdown Sizes */
+  .dropdown-input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid $brand-400; 
+    width: 200px;
+    padding: 10px 8px 10px 12px;
+    border-radius: 8px;
+    color: $brand-600;
+
+    &.dropdown-small {
+      padding: 8px 8px 8px 10px;
+    }
+  
+    &.dropdown-medium {
+      padding: 10px 8px 10px 12px;
+    }
+  
+    &.dropdown-big {
+      padding: 16px 8px 16px 12px;
+    }
+  
+    &:hover {
+      border-color: $brand-600; 
+    }
+  
+    /* Input element inside dropdown */
+    input {
+      width: 100%;
+      border: none;
+      font-size: 14px;
+      outline: none;
+      background: $brand-100;
+      border-radius: 8px;
+    }
+  }
+
+  .selected-option button {
+    background: none;
+    border: none;
+    color: $brand-600;
+    cursor: pointer;
+  }
+  
+  /* Icons inside dropdown */
+  .dropdown-icon {
+    margin-right: 8px;
+  }
+  
+  /* Dropdown list */
+  .dropdown-list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  /* Dropdown item styles */
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: $brand-100;
+    }
+  }
+  
+  .dropdown-item-label {
+    font-size: 14px;
+  }
+  
+  /* Grouping styles */
+  .dropdown-group {
+    margin-top: 10px;
+  }
+  
+  .group-label {
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 10px;
+    color: $brand-600;
+  }
+
+  .selected-option {
+    color: $brand-600;
+    background-color: $brand-100;
+    padding: 8px;
+    border-radius: 16px;
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .dropdown-icon-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+  }
+  
+  

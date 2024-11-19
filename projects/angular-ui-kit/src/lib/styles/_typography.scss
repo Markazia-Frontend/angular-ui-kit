@@ -1,0 +1,181 @@
+// ** Desktop Headings **
+
+// Heading 1 (text-5xl)
+$heading-1-font-size: 48px;
+$heading-1-line-height: 48px;
+$heading-1-font-weight: 700;
+
+// Heading 2 (text-4xl)
+$heading-2-font-size: 36px;
+$heading-2-line-height: 40px;
+$heading-2-font-weight: 700;
+
+// Heading 3 (text-3xl)
+$heading-3-font-size: 30px;
+$heading-3-line-height: 36px;
+$heading-3-font-weight: 700;
+
+// Heading 4 (text-2xl)
+$heading-4-font-size: 24px;
+$heading-4-line-height: 32px;
+$heading-4-font-weight: 700;
+
+// Heading 5 (text-xl)
+$heading-5-font-size: 20px;
+$heading-5-line-height: 28px;
+$heading-5-font-weight: 700;
+
+
+// ** Mobile Headings **
+// Mobile Heading 1 (text-4xl)
+$mobile-heading-1-font-size: 36px;
+$mobile-heading-1-line-height: 40px;
+$mobile-heading-1-font-weight: 700;
+
+// Mobile Heading 2 (text-3xl)
+$mobile-heading-2-font-size: 30px;
+$mobile-heading-2-line-height: 36px;
+$mobile-heading-2-font-weight: 700;
+
+// Mobile Heading 3 (text-2xl)
+$mobile-heading-3-font-size: 24px;
+$mobile-heading-3-line-height: 32px;
+$mobile-heading-3-font-weight: 700;
+
+// Mobile Heading 4 (text-xl)
+$mobile-heading-4-font-size: 20px;
+$mobile-heading-4-line-height: 28px;
+$mobile-heading-4-font-weight: 700;
+
+
+// ** Body Text **
+// Body Text Large (text-lg)
+$body-lg-font-size: 18px;
+$body-lg-line-height: 28px;
+$body-lg-font-weight: 400;
+
+// Body Text Base (text-base)
+$body-base-font-size: 16px;
+$body-base-line-height: 24px;
+$body-base-font-weight: 400; 
+
+// Body Text Small (text-sm)
+$body-sm-font-size: 14px;
+$body-sm-line-height: 20px;
+$body-sm-font-weight: 400;
+
+// Body Text Extra Small (text-xs)
+$body-xs-font-size: 12px;
+$body-xs-line-height: 16px;
+$body-xs-font-weight: 400;
+
+
+// ** Font Weights **
+// Normal font weight (font-normal)
+$font-normal: 400;
+
+// Semi-Bold font weight (font-semibold)
+$font-semibold: 600;
+
+// Bold font weight (font-bold)
+$font-bold: 700;
+
+
+// Desktop Headings
+.h1 {
+  font-size: $heading-1-font-size;
+  line-height: $heading-1-line-height;
+  font-weight: $heading-1-font-weight;
+}
+
+.h2 {
+  font-size: $heading-2-font-size;
+  line-height: $heading-2-line-height;
+  font-weight: $heading-2-font-weight;
+}
+
+.h3 {
+  font-size: $heading-3-font-size;
+  line-height: $heading-3-line-height;
+  font-weight: $heading-3-font-weight;
+}
+
+.h4 {
+  font-size: $heading-4-font-size;
+  line-height: $heading-4-line-height;
+  font-weight: $heading-4-font-weight;
+}
+
+.h5 {
+  font-size: $heading-5-font-size;
+  line-height: $heading-5-line-height;
+  font-weight: $heading-5-font-weight;
+}
+
+// Mobile Headings
+.mobile-h1 {
+  font-size: $mobile-heading-1-font-size;
+  line-height: $mobile-heading-1-line-height;
+  font-weight: $mobile-heading-1-font-weight;
+}
+
+.mobile-h2 {
+  font-size: $mobile-heading-2-font-size;
+  line-height: $mobile-heading-2-line-height;
+  font-weight: $mobile-heading-2-font-weight;
+}
+
+.mobile-h3 {
+  font-size: $mobile-heading-3-font-size;
+  line-height: $mobile-heading-3-line-height;
+  font-weight: $mobile-heading-3-font-weight;
+}
+
+.mobile-h4 {
+  font-size: $mobile-heading-4-font-size;
+  line-height: $mobile-heading-4-line-height;
+  font-weight: $mobile-heading-4-font-weight;
+}
+
+// Body Text
+.body-lg {
+  font-size: $body-lg-font-size;
+  line-height: $body-lg-line-height;
+  font-weight: $body-lg-font-weight;
+}
+
+.body-base {
+  font-size: $body-base-font-size;
+  line-height: $body-base-line-height;
+  font-weight: $body-base-font-weight;
+}
+
+.body-sm {
+  font-size: $body-sm-font-size;
+  line-height: $body-sm-line-height;
+  font-weight: $body-sm-font-weight;
+}
+
+.body-xs {
+  font-size: $body-xs-font-size;
+  line-height: $body-xs-line-height;
+  font-weight: $body-xs-font-weight;
+}
+
+// Font Weights
+.font-normal {
+  font-weight: $font-normal;
+}
+
+.font-semibold {
+  font-weight: $font-semibold;
+}
+
+.font-bold {
+  font-weight: $font-bold;
+}
+
+// Capitalized Text
+.capitalized {
+  text-transform: uppercase;
+}

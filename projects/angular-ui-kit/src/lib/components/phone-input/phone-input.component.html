@@ -1,0 +1,15 @@
+<div class="phone-input-container">
+    <div class="country-select">
+        <select (change)="onCountryChange($event)">
+            <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+          </select>          
+    </div>
+    
+    <input 
+      type="text" 
+      [placeholder]="placeholder"
+      [(ngModel)]="phoneNumber" 
+      (input)="onPhoneNumberChange($event)"
+      class="phone-input" />
+  </div>
+  

@@ -1,0 +1,114 @@
+@import '../../styles/_colors.scss';
+
+.lib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  
+  &.cursor-not-allowed {
+    cursor: not-allowed;
+  }
+
+  &.loading {
+    cursor: wait;
+  }
+
+  /* Button Sizes */
+  &.small {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  &.medium {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+  &.big {
+    font-size: 18px;
+    padding: 16px 24px;
+  }
+
+  /* Button Types */
+  &.primary {
+    color: $white;
+
+    &.default {
+      background-color: $brand-600;
+    }
+
+    &:hover:not(.disabled) {
+      background-color: $brand-700;
+    }
+    &.loading {
+      background-color: $brand-200;
+      cursor: progress;
+    }
+    &.disabled {
+      background-color: $brand-100;
+      color: $brand-400;
+    }
+  }
+
+  &.secondary {
+    background-color: $white;
+    color: $brand-500;
+    border: 1px solid $brand-500;
+
+    &:hover:not(.disabled) {
+      border-color: $brand-700;
+      color: $brand-700;
+    }
+    &.loading {
+      border-color: $brand-400;
+      color: $brand-400;
+      cursor: progress;
+    }
+    &.disabled {
+      background-color: $brand-100;
+      color: $brand-400;
+      border: none;
+      cursor: auto;
+    }
+  }
+
+  
+  &.tertiary {
+    border:none;
+
+    &.default {
+      background-color: $brand-100;
+      color: $brand-500;
+    }
+    &.hover:not(.disabled) {
+      background-color: $brand-100;
+      color: $brand-600;
+    }
+    &.loading {
+     background-color: $white;
+     color: $brand-600;
+     cursor: progress;
+    }
+    &.disabled {
+      background-color: $white;
+      color: $brand-400;
+      cursor: auto;
+    }
+  }
+
+  /* Loading Spinner Styles */
+  .loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+
+    svg {
+      width:24px;
+      height: 24px;
+    }
+  }
+}

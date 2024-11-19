@@ -1,0 +1,19 @@
+.phone-input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .country-select select {
+    padding: 4px;
+    font-size: 14px;
+  }
+  
+  .phone-input {
+    flex: 1;
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  

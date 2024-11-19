@@ -1,0 +1,38 @@
+<button
+  [disabled]="disabled || isLoading"
+  [ngClass]="[type, size, mode]"
+  (click)="handleClick()"
+  class="lib-btn"
+  [attr.title]="tooltip"
+>
+  <!-- If it's an icon-only button, hide the label and display the icon -->
+  <ng-container *ngIf="isIconOnly; else content">
+    <i [class]="icon"></i>
+  </ng-container>
+
+  <!-- Regular Button Content (Label, Icons, etc.) -->
+  <ng-template #content>
+    <!-- Left Icon -->
+    <ng-container *ngIf="icon && iconPosition === 'left' && !isLoading">
+      <i [class]="icon" class="icon-left"></i>
+    </ng-container>
+
+    <!-- Loading Spinner -->
+    <ng-container *ngIf="isLoading">
+      <div class="loading-spinner">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-spin" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" class="opacity-25" stroke="currentColor" stroke-width="4"></circle>
+          <path d="M4 12a8 8 0 0116 0A8 8 0 014 12z" fill="currentColor" class="opacity-75"></path>
+        </svg>
+      </div>
+    </ng-container>
+
+    <!-- Button Label -->
+    <span *ngIf="!isLoading">{{ label }}</span>
+
+    <!-- Right Icon -->
+    <ng-container *ngIf="icon && iconPosition === 'right' && !isLoading">
+      <i [class]="icon" class="icon-right"></i>
+    </ng-container>
+  </ng-template>
+</button>

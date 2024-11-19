@@ -1,0 +1,36 @@
+$badge-sizes: (
+  small: 12px,
+  medium: 14px,
+  big: 16px
+);
+
+$badge-padding: (
+  small: 4px 8px,
+  medium: 6px 12px,
+  big: 8px 16px
+);
+
+$badge-font-weights: (
+  small: 700,
+  medium: normal,
+  big: 700
+);
+
+.badge {
+  border-radius: 6px; 
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  cursor: default;
+  color: $brand-600; 
+  background-color: $brand-100;
+
+  // Dynamic size classes
+  @each $name, $size in $badge-sizes {
+    &--#{$name} {
+      font-size: $size;
+      padding: map-get($badge-padding, $name);
+      font-weight: map-get($badge-font-weights, $name);
+    }
+  }
+}

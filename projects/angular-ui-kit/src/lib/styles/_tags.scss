@@ -1,0 +1,38 @@
+@import './_colors.scss';
+
+$tag-sizes: (
+  small: 12px,
+  medium: 14px,
+  big: 16px
+);
+
+$tag-padding: (
+  small: 8px,
+  medium: 8px 12px,
+  big: 8px 12px
+);
+
+$tag-font-weights: (
+  small: 700,
+  medium: normal,
+  big: 700
+);
+
+.tag {
+  border-radius: 26px;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  cursor: default;
+  color: $brand-600; 
+  background-color: $brand-100;
+
+  // Dynamic size classes
+  @each $name, $size in $tag-sizes {
+    &--#{$name} {
+      font-size: $size;
+      padding: map-get($tag-padding, $name);
+      font-weight: map-get($tag-font-weights, $name);
+    }
+  }
+}

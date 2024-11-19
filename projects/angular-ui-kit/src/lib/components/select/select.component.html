@@ -1,48 +1,6 @@
-<div class="dropdown-container">
-    <!-- Search Input (if applicable) -->
-    <div *ngIf="isSearchable" class="dropdown-search">
-      <input type="text" [placeholder]="placeholder" (input)="handleSearch($event)" />
-    </div>
-  
-    <!-- Input with icon for placeholder -->
-    <div *ngIf="!isSearchable" [ngClass]="{
-           'dropdown-input-container': true,
-           'dropdown-small': size === 'small',
-           'dropdown-medium': size === 'medium',
-           'dropdown-big': size === 'big'
-         }">
-      <!-- Icon on the left of the placeholder -->
-      <div *ngIf="iconForPlaceholder && hasIcon" class="dropdown-icon">
-        <img [src]="iconForPlaceholder" alt="icon" class="dropdown-icon-img" />
-      </div>
-      <input type="text" [placeholder]="placeholder"
-        [value]="selectedOptions.length > 0 ? selectedOptions.join(', ') : ''" readonly />
-    </div>
-  
-    <!-- Display selected options below the input (for multi-select) -->
-    <div *ngIf="isMultiSelect && selectedOptions.length > 0" class="selected-options">
-      <span *ngFor="let option of selectedOptions">
-        <span class="selected-option">{{ option }}</span>
-        <button (click)="removeOption(option)" class="remove-option-btn">x</button>
-      </span>
-    </div>
-  
-    <!-- Dropdown Options -->
-    <div class="dropdown-list">
-      <div *ngFor="let option of filterOptions()">
-        <div class="dropdown-item">
-          <input *ngIf="isMultiSelect" type="checkbox" [checked]="selectedOptions.includes(option.value)"
-            (change)="handleSelectionChange(option.value)" />
-  
-  
-          <div class="dropdown-item-label">{{ option.label }}</div>
-        </div>
-  
-        <!-- If withGroups is true, display group header -->
-        <div *ngIf="withGroups && option.group" class="dropdown-group">
-          <span class="group-label">{{ option.group }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+<div class="custom-select">
+  <select [(ngModel)]="selectedOption" (change)="onSelect(selectedOption)">
+    <option value="" disabled selected>{{ placeholder || 'Choose value' }}</option>
+    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+  </select>
+</div>

@@ -1,0 +1,108 @@
+@import './colors';
+
+// Variables
+$radio-size: 20px;
+$radio-border: $brand-400;
+$radio-selected: $brand-700; // Default selected background color
+$radio-dot-color: white; // Inner dot color
+
+.radio {
+    position: absolute;
+    opacity: 0;
+
+    // Label Styling
+    &+label {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        line-height: $radio-size;
+        padding-left: $radio-size + 10;
+        font-size: $radio-size - 2;
+        font-family: sans-serif;
+        color: $brand-600;
+
+        // Radio Circle
+        &:before {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: 0;
+            content: "";
+            width: $radio-size;
+            height: $radio-size;
+            background: transparent;
+            box-shadow: inset 0 0 0 1px $radio-border;
+            border-radius: 50%;
+            transition: 200ms ease-in-out all;
+        }
+
+        // Inner Dot
+        &:after {
+            position: absolute;
+            display: block;
+            top: 10px;
+            left: 10px;
+            content: "";
+            width: 0;
+            height: 0;
+            background-color: transparent;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: 200ms ease-in-out all;
+        }
+    }
+
+    // Checked State
+    &:checked {
+        &+label {
+            &:before {
+                box-shadow: none;
+                background: $radio-selected; // Controlled background color
+            }
+
+            &:after {
+                width: 8px;
+                height: 8px;
+                background-color: $radio-dot-color; // Inner dot color
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+    // Focus State
+    &:focus-visible+label:before {
+        outline: 2px solid $radio-selected;
+        outline-offset: 2px;
+    }
+
+    // Disabled State
+    &:disabled {
+        cursor: not-allowed;
+
+        &+label {
+            cursor: not-allowed;
+
+            &:before {
+                box-shadow: none;
+                border: 1px solid $brand-200;
+            }
+
+            &:after {
+                background-color: transparent;
+            }
+        }
+    }
+
+    // Disabled Checked State
+    &:checked:disabled+label {
+        &:before {
+            background: $brand-200;
+        }
+
+        &:after {
+            background-color: $radio-dot-color;
+            top: 11px;
+            left: 11px;
+        }
+    }
+}

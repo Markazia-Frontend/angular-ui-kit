@@ -1,0 +1,77 @@
+
+@import './_colors.scss';
+
+$toggle-width: 48px;
+$toggle-height: 28px;
+$toggle-border-radius: 25px;
+$toggle-bg-on: $brand-700; 
+$toggle-bg-off: $brand-200;
+$toggle-bg-disabled: $brand-100; 
+$toggle-knob-color: $brand-100; 
+$toggle-disabled-knob-color: $white; 
+$toggle-transition: 0.3s ease;
+
+// Mixin for toggles
+@mixin toggle-base {
+  position: relative;
+  display: inline-block;
+  width: $toggle-width;
+  height: $toggle-height;
+  background-color: $toggle-bg-off;
+  border-radius: $toggle-border-radius;
+  transition: background-color $toggle-transition;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc($toggle-height - 4px);
+    height: calc($toggle-height - 4px);
+    background-color: $white;
+    border-radius: 50%;
+    transition: transform $toggle-transition, background-color $toggle-transition;
+  }
+}
+
+.toggle {
+  @include toggle-base;
+
+  &.on {
+    background-color: $toggle-bg-on;
+
+    &:before {
+      transform: translateX(calc($toggle-width - $toggle-height));
+    }
+  }
+
+  &.disabled {
+    background-color: $toggle-bg-disabled;
+    cursor: not-allowed;
+
+    &:before {
+      background-color: $toggle-disabled-knob-color;
+    }
+  }
+}
+
+.toggle-input {
+  display: none;
+
+  &:checked + .toggle {
+    background-color: $toggle-bg-on;
+
+    &:before {
+      transform: translateX(calc($toggle-width - $toggle-height));
+    }
+  }
+
+  &:disabled + .toggle {
+    background-color: $toggle-bg-disabled;
+
+    &:before {
+      background-color: $toggle-disabled-knob-color;
+    }
+  }
+}

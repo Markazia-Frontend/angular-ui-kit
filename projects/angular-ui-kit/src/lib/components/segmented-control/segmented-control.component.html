@@ -1,0 +1,13 @@
+<div class="segmented-control">
+    <div
+      *ngFor="let segment of segments; let i = index"
+      class="segment"
+      [ngClass]="{ selected: selectedIndex === i, disabled: disabled }"
+      [ngStyle]="getSegmentStyle()"
+      (click)="onSegmentChange(i)"
+    >
+      <div *ngIf="segment.icon" class="icon" [innerHTML]="getSanitizedIcon(segment.icon)"></div>
+      <span>{{ segment.label }}</span>
+    </div>
+  </div>
+  

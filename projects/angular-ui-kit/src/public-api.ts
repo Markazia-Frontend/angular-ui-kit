@@ -11,3 +11,4 @@ export * from './lib/components/select/select.component';
 export * from './lib/components/date-picker/date-picker.component';
 export * from './lib/components/toast/toast.component';
 export * from './lib/components/segmented-control/segmented-control.component';
+export * from './lib/components/modal/modal.component';

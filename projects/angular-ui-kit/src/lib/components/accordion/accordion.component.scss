@@ -1,0 +1,82 @@
+@import '../../styles/_colors.scss';
+
+.accordion {
+    border: 1px solid $brand-500;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .accordion-item {
+      border-bottom: 1px solid #ddd;
+      cursor: pointer;
+      background-color: #fff;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+  
+      .accordion-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+  
+        .icon {
+          margin-right: 12px;
+          &.no-icon {
+            margin: 0;
+          }
+        }
+  
+        .text-content {
+          flex-grow: 1;
+  
+          .headline {
+            margin: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: $brand-700;
+            &.no-subtext {
+                margin: 0;
+            }
+          }
+  
+          .subtext {
+            margin: 0;
+            font-size: 14px;
+            color: $brand-500;
+          }
+        }
+  
+        .arrow {
+          width: 16px;
+          height: 16px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: transform 0.3s ease;
+  
+          &.closed {
+            background-image: url('../../assets/icons/cheveron-down.svg');
+          }
+  
+          &.open {
+            background-image: url('../../assets/icons/cheveron-up.svg');
+          }
+        }
+      }
+  
+      .accordion-body {
+        max-height: 0;
+        padding: 0 16px;
+        overflow: hidden;
+        transition: max-height 1s ease-out;
+        font-size: 14px;
+        color: #333;
+  
+        &.open {
+          max-height: fit-content; 
+          padding: 16px 16px; 
+        }
+      }
+    }
+  }

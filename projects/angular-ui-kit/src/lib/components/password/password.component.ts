@@ -58,15 +58,22 @@ export class PasswordComponent {
   isTooltipVisible: boolean = false;
 
   toggleTooltip() {
-    this.isTooltipVisible = !this.isTooltipVisible;  
+    this.isTooltipVisible = !this.isTooltipVisible;
   }
 
   /**
-   * Toggle password visibility (show/hide).
+   * Toggle password visibility (show/hide) and update input type.
    */
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
+
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+
+    if (passwordInput) {
+      passwordInput.type = this.passwordVisible ? 'text' : 'password';
+    }
   }
+
 
   /**
    * Handle password change event, update the strength and percentage.

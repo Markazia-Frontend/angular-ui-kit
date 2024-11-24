@@ -1,10 +1,16 @@
-<div class="toast" [ngClass]="toastType" *ngIf="isVisible">
-    <div class="toast-icon">
-        <img *ngIf="toastType === 'success'" src="assets/icons/check-circle.svg" alt="Success" />
-        <img *ngIf="toastType === 'error'" src="assets/icons/x-circle.svg" alt="Error" />
+<div class="toast-container">
+    <div *ngFor="let toast of toasts" [ngClass]="['toast', toast.type]">
+        <!-- Render SVG Icon -->
+        <div class="toast-icon" *ngIf="toast.icon && WithSVG" [innerHTML]="toast.icon"></div>
+        
+        <!-- Toast Message -->
+        <div class="toast-haeder">
+            <span class="title">{{ toast.title }}</span>
+            <span class="sub-title">{{ toast.subTitle }}</span>
+        </div>
+        <button class="action" *ngIf="WithAction">{{ActionLabel}}</button>
+
+        <button class="close-button" *ngIf="withClose && toasts[0].title && toasts[0].subTitle" (click)="removeToast(toast)">&#10006;</button>
+        <!-- Close Button -->
     </div>
-    <div class="toast-message">
-        <p>{{ message }}</p>
-    </div>
-    <button class="toast-close" (click)="closeToast()">X</button>
 </div>

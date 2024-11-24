@@ -118,10 +118,10 @@ export class ToastComponent {
       icon: sanitizedIcon,
     });
 
-    // // Automatically remove the toast after a timeout
-    // setTimeout(() => {
-    //   this.removeToast(this.toasts[0]);  // Removes the first toast
-    // }, 3000);  // Set toast duration to 3 seconds
+    // Automatically remove the toast after a timeout
+    setTimeout(() => {
+      this.removeToast(this.toasts[0]);  // Removes the first toast
+    }, 3000);  // Set toast duration to 3 seconds
   }
 
   /**

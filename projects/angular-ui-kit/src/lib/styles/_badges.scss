@@ -24,7 +24,9 @@ $badge-font-weights: (
   cursor: default;
   color: $brand-600; 
   background-color: $brand-100;
-
+  display: flex;
+  align-items: center;
+  
   // Dynamic size classes
   @each $name, $size in $badge-sizes {
     &--#{$name} {

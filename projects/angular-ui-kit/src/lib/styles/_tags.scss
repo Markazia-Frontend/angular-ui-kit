@@ -20,12 +20,13 @@ $tag-font-weights: (
 
 .tag {
   border-radius: 26px;
-  display: inline-block;
+  display: flex;
   text-align: center;
   white-space: nowrap;
   cursor: default;
   color: $brand-600; 
   background-color: $brand-100;
+  align-items: center;
 
   // Dynamic size classes
   @each $name, $size in $tag-sizes {

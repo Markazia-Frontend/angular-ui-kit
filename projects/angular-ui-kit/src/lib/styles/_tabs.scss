@@ -1,0 +1,44 @@
+@import '../styles/colors';
+
+.tab {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 10px;
+    color: $brand-600;
+    &.active {
+        color: $brand-700;
+        border-bottom: 3px solid $brand-700;
+        svg {
+            color: $brand-700;
+        }
+    }
+}
+
+.tab-mobile {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+    &.active {
+        color: $brand-700;
+        border-bottom: 3px solid $brand-700;
+        svg {
+            color: $brand-700;
+        }
+    }
+}
+
+.tab:hover:not(.active) {
+    border: none;
+    color: $brand-700;
+    svg {
+        color: $brand-700;
+    }
+}
+.tabs-container {
+    border-bottom: 1px solid;
+    border-color: #E2E8F0;
+}
+
+svg:hover {
+    color: $brand-700;
+}

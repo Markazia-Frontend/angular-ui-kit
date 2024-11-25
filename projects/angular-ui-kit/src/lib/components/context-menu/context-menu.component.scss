@@ -1,0 +1,54 @@
+@import '../../styles/_colors.scss';
+
+.context-menu {
+    position: absolute;
+    background: #ffffff;
+    box-shadow: 0px 10px 22px 0px #2D4D6C26;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 180px;
+    padding: 2px;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  
+    li {
+      position: relative;
+      color: $brand-600;
+      font-size: 14px;
+      border-radius: 8px;
+      padding: 9px 16px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: $brand-100;
+      }
+  
+      &:active {
+        background-color: #eaeaea;
+      }
+      
+  .icon-left {
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .icon-right {
+    position: absolute;
+    right: 10px;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+}

@@ -1,0 +1,18 @@
+<div
+  class="context-menu"
+  *ngIf="visible"
+  [style.top.px]="y"
+  [style.left.px]="x"
+>
+  <ul>
+    <li *ngFor="let item of items" (click)="onItemClick(item.text)">
+      <span *ngIf="item.icon && item.position === 'left'" class="icon-left">
+        <img [src]="item.icon" alt="icon" />
+      </span>
+      {{ item.text }}
+      <span *ngIf="item.icon && item.position === 'right'" class="icon-right">
+        <img [src]="item.icon" alt="icon" />
+      </span>
+    </li>
+  </ul>
+</div>

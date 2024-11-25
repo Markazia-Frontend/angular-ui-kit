@@ -68,7 +68,9 @@
               "projects/demo-app/src/styles.scss",
               "projects/angular-ui-kit/src/lib/styles/lib-styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/preline/preline.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -128,7 +130,9 @@
               "projects/demo-app/src/styles.scss",
               "projects/angular-ui-kit/src/lib/styles/lib-styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/preline/preline.js"
+            ]
           }
         }
       }

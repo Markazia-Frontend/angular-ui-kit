@@ -17,3 +17,4 @@ export * from './lib/components/toast/toast.component';
 export * from './lib/components/tooltip/tooltip.component';
 export * from './lib/components/textarea/textarea.component';
 export * from './lib/components/context-menu/context-menu.component';
+export * from './lib/components/stepper/stepper.component';

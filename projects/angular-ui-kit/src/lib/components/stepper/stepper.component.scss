@@ -1,0 +1,96 @@
+@import '../../styles/colors';
+
+.stepper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .stepper-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &.small {
+      --padding: 6px 8px;
+      --font-size: 12px;
+
+      .stepper-button {
+        width: 36px;
+        height: 36px;
+        color: $brand-500;
+      border: 1px solid $brand-400;
+      border-radius: 50%;
+      font-size: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+
+
+    }
+  
+    &.medium {
+      --padding: 10px;
+      --font-size: 16px;
+
+
+      .stepper-button {
+        width: 36px;
+        height: 36px;
+        color: $brand-500;
+      border: 1px solid $brand-400;
+      border-radius: 50%;
+      font-size: 26px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+
+
+    }
+  
+    &.large {
+      --padding: 16px;
+      --font-size: 20px;
+
+
+      .stepper-button {
+        width: 56px;
+        height: 56px;
+        color: $brand-500;
+      border: 1px solid $brand-400;
+      border-radius: 50%;
+      padding: var(--padding);
+      font-size: 36px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+      }
+    }
+
+    }
+  
+    .stepper-input {
+      width: 85px;
+      text-align: center;
+      font-size: var(--font-size);
+      border: 1px solid $brand-400;
+      padding: var(--padding);
+      border-radius: 8px;
+      color: $brand-400;
+    }
+  }
+
+  .stepper-input.small {
+    width: 72px !important;
+  }

@@ -1,0 +1,6 @@
+<div class="stepper" [ngClass]="size">
+    <button class="stepper-button" (click)="decrement()">&minus;</button>
+    <input [ngClass]="size" type="text" class="stepper-input" [(ngModel)]="value" [attr.min]="min" [attr.max]="max"
+        (input)="valueChange.emit(value)" />
+    <button class="stepper-button" (click)="increment()">&plus;</button>
+</div>

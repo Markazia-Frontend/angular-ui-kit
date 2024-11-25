@@ -1,0 +1,68 @@
+@import './colors';
+
+.small-section-title {
+    font-size: 14px;
+    color: $brand-600;
+  }
+
+  .big-section-title {
+    font-size: 16px;
+    color: $brand-600;
+    font-weight: bold;
+  }
+
+  .mobile-subnav-item-container {
+    padding: 18px;
+    position: relative;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: $brand-700;
+    border-bottom: 1px solid $brand-200;
+  }
+
+  .mobile-item-menu-left-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .mobile-item-menu-right-icon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+  }
+
+  .list-item {
+    position: relative;
+    max-width: 300px;
+    padding: 10px;
+    display: flex;
+    gap: 11px;
+    align-items: center;
+  }
+
+  .mobile-item-menu-right-icon-svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 10px;
+  }
+
+  .list-item-content-subtitle {
+    font-size: 14px;
+    color: $brand-700;
+  }
+
+  .list-item-content-title {
+    font-size: 16px;
+    color: $brand-700;
+  }
+
+  .list-item-with-toggle {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

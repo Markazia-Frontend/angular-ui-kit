@@ -1,0 +1,13 @@
+<div class="custom-textarea-container">
+    <div class="char-counter" *ngIf="limit !== null">
+        {{ value.length }} / {{ limit }}
+      </div>
+    <textarea
+      [placeholder]="placeholder"
+      [rows]="rows"
+      [cols]="cols"
+      [(ngModel)]="value"
+      (input)="onInput($event)"
+    ></textarea>
+  </div>
+  

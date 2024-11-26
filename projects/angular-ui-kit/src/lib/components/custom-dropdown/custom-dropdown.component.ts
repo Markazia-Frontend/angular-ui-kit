@@ -5,14 +5,12 @@ import { FormsModule } from '@angular/forms';
 /**
  * CustomDropdownComponent is a reusable dropdown component with built-in search functionality.
  * It allows the user to select an item from a list of options, search through the items, 
- * and add a new item if it doesn't exist.
  * 
  * @example
  * <lib-custom-dropdown 
  *   [items]="dropdownItems" 
  *   [size]="'medium'"
- *   (selectionChange)="onSelectionChange($event)"
- *   (itemAdded)="onItemAdded($event)">
+ *   (selectionChange)="onSelectionChange($event)">
  * </lib-custom-dropdown>
  * 
  * @description
@@ -47,12 +45,6 @@ export class CustomDropdownComponent {
    * Emits the selected item with `id` and `label` properties.
    */
   @Output() selectionChange = new EventEmitter<{ id: number; label: string }>();
-
-  /**
-   * Event emitted when a new item is added.
-   * Emits the added item with `id` and `label` properties.
-   */
-  @Output() itemAdded = new EventEmitter<{ id: number; label: string }>();
 
   isOpen = false; // Dropdown visibility state
   selectedItem: { id: number; label: string } | null = null; // Selected item

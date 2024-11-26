@@ -1,6 +1,9 @@
+@import '../../styles/colors';
+
 .phone-input-container {
   display: flex;
   align-items: center;
+  max-width: 250px !important;
 
   .dropdown {
     padding: 0.5rem;
@@ -15,4 +18,47 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+}
+
+button#dropdown-phone-button {
+  background-color: white !important;
+  border: 1px solid $brand-300;
+  padding: 10px;
+}
+
+button#dropdown-phone-button:focus {
+  box-shadow: none;
+  outline: 2px solid #C7D2FE;
+outline-offset: 0;
+}
+
+input#phone-input {
+  background-color: white !important;
+  border: 1px solid $brand-400;
+  padding: 8px;
+}
+
+button.option  {
+  border-radius: 8px;
+}
+
+button.option:hover {
+  background-color: #C7D2FE;
+}
+
+.options-container {
+  padding: 10px;
+}
+
+button.option {
+  color: #0F172A;
+
+}
+
+div#dropdown-phone {
+  width: 100%;
+  max-width: 250px !important;
+}
+.down-arrow {
+  margin-right: 0;
 }

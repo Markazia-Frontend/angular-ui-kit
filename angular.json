@@ -128,7 +128,8 @@
             ],
             "styles": [
               "projects/demo-app/src/styles.scss",
-              "projects/angular-ui-kit/src/lib/styles/lib-styles.scss"
+              "projects/angular-ui-kit/src/lib/styles/lib-styles.scss",
+              "node_modules/intl-tel-input/build/css/intl-tel-input.css"
             ],
             "scripts": [
               "node_modules/preline/preline.js"

@@ -1,0 +1,52 @@
+<div class="datepicker-container">
+  <input type="text" [placeholder]="placeholder" [value]="formattedDate" (click)="toggleCalendar()" readonly
+    class="datepicker-input" [ngClass]="{ 'range': range }" />
+    
+  <div *ngIf="showCalendar" class="calendar-popup">
+    <div class="calendar-header">
+      <button (click)="prevMonth()">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12.7678 4.99994L7.76776 9.99994L12.7678 14.9999L11 16.7677L5.11611 10.8838C4.62796 10.3957 4.62796 9.60422 5.11611 9.11606L11 3.23218L12.7678 4.99994Z" fill="#727272"/>
+          </svg>          
+      </button>
+      <div class="header-months-years">
+        <span class="month-selector" (click)="toggleMonthSelector()">
+          {{ getMonthName(currentMonth) }}
+        </span>
+        <span class="year-selector" (click)="toggleYearSelector()">
+          {{ currentYear }}
+        </span>
+      </div>
+      <button (click)="nextMonth()"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.23218 15.0001L11.2322 10.0001L6.23218 5.00006L7.99994 3.23229L13.8838 9.11617C14.372 9.60433 14.372 10.3958 13.8838 10.8839L7.99994 16.7678L6.23218 15.0001Z" fill="#727272"/>
+        </svg>
+        </button>
+    </div>
+
+    <div *ngIf="showYearSelector" class="year-options">
+      <div *ngFor="let year of years" (click)="selectYear(year)">
+        {{ year }}
+      </div>
+    </div>
+
+    <div *ngIf="showMonthSelector" class="month-options">
+      <div *ngFor="let month of getMonthNames()" (click)="selectMonth(month.index)">
+        {{ month.name }}
+      </div>
+    </div>
+
+    <div *ngIf="!showYearSelector && !showMonthSelector" class="calendar-body" [ngClass]="{ 'range': range ,'not-range':!range}">
+      <div class="week-days">
+        <div *ngFor="let day of weekDays">{{ day }}</div>
+      </div>
+      <div class="days">
+        <div *ngFor="let day of daysInMonth" [class.selected]="isSelected(day)" [class.in-range]="isInRange(day)"
+          [class.first-selected]="isFirstSelected(day)" [class.last-selected]="isLastSelected(day)"
+          (click)="selectDate(day)">
+          {{ day }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

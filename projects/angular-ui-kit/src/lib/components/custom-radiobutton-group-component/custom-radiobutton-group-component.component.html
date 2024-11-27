@@ -1,0 +1,16 @@
+<div class="group-radio-buttons" [ngClass]="{
+    small: size === 'sm',
+    medium: size === 'md',
+    large: size === 'lg'
+  }">
+    <div *ngFor="let button of RadioButtons; let i = index" class="RadioButton" [ngClass]="{
+        selected: selectedIndex === i,
+        disabled: disabled,
+        small: size === 'sm',
+        medium: size === 'md',
+        large: size === 'lg'
+      }" [ngStyle]="getSegmentStyle()" (click)="onRadioChange(i)">
+      <div *ngIf="button.icon" class="icon" [innerHTML]="getSanitizedIcon(button.icon)"></div>
+      <span>{{ button.label }}</span>
+    </div>
+  </div>

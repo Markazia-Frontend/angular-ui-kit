@@ -1,0 +1,75 @@
+@import '../../styles/_colors.scss';
+
+.group-radio-buttons {
+    display: flex;
+    width: fit-content;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid $brand-200;
+
+    .RadioButton {
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s, color 0.2s;
+        user-select: none;
+        color: $brand-600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border: 1px solid $brand-200;
+
+        &:first-child {
+            border-radius: 8px 0px 0px 8px;
+        }
+
+        &:last-child {
+            border-radius: 0px 8px 8px 0px;
+        }
+
+        &:hover {
+            color: $brand-700;
+        }
+
+        span {
+            height: 20px;
+        }
+
+        .icon {
+            height: 16px;
+        }
+
+        &.selected {
+            background-color: $brand-100;
+        }
+
+        &.disabled {
+            background-color: transparent;
+            color: $brand-400;
+            cursor: not-allowed;
+        }
+
+        svg {
+            margin-right: 8px;
+            height: 20px;
+
+        }
+    }
+}
+
+
+.RadioButton.medium {
+    font-weight: 500;
+}
+
+.RadioButton.large {
+    font-weight: bold;
+    font-size: 16px;
+
+    .icon {
+        height: 20px !important;
+    }
+}

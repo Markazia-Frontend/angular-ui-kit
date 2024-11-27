@@ -41,7 +41,7 @@
       }
   
       &.disabled {
-        background-color: $white;
+        background-color: transparent;
         color: $brand-400;
         cursor: not-allowed;
       }

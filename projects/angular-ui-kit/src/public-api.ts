@@ -19,3 +19,4 @@ export * from './lib/components/context-menu/context-menu.component';
 export * from './lib/components/stepper/stepper.component';
 export * from './lib/components/datepicker/datepicker.component';
 export * from './lib/components/custom-dropdown/custom-dropdown.component';
+export * from './lib/components/custom-multi-dropdown-select/custom-multi-dropdown-select.component';

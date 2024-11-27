@@ -1,0 +1,51 @@
+@import '../../styles/colors';
+
+
+.custom-input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    color: $brand-600;
+    border: 1px solid $brand-400;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .input-field {
+    border: none;
+    padding: 0.5rem 0px;
+    font-size: 1rem;
+    color: $brand-700;
+    font-size: 16px;
+    border-radius: 6px;
+    width: 100%;
+
+    &.align-right {
+        text-align: right;
+    }
+  }
+
+  .input-field::placeholder {
+    color: $brand-500;
+  }
+  
+  .prefix-icon, .suffix-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    font-weight: bold;
+  }
+  
+  .prefix-icon {
+    margin-right: 0.5rem;
+  }
+  
+  .suffix-icon {
+    margin-left: 0.5rem;
+  }
+  
+  .padding-right {
+    margin-right: 8px;
+  }

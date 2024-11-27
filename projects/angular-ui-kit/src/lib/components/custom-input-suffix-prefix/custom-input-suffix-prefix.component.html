@@ -1,0 +1,13 @@
+<div class="custom-input-container">
+    <!-- Prefix icon -->
+    <span *ngIf="prefixIcon" class="suffix-icon" [innerHTML]="sanitizeSvg(prefixIcon)"></span>
+
+
+    <!-- Input field -->
+    <input type="text" [placeholder]="placeholder" [(ngModel)]="value" (ngModelChange)="onValueChange()"
+        class="input-field" [ngClass]="{'align-right': suffixIcon}">
+
+    <!-- Suffix icon -->
+    <span *ngIf="suffixIcon" class="suffix-icon" [ngClass]="{'padding-right': suffixIcon}" [innerHTML]="sanitizeSvg(suffixIcon)"></span>
+
+</div>

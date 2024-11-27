@@ -61,8 +61,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/angular-ui-kit/assets",
-                "output": "assets/"
+                "input": "projects/demo-app/public"
               }
             ],
             "styles": [
@@ -124,13 +123,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "projects/angular-ui-kit/assets",
-                "output": "assets/"
+                "input": "projects/demo-app/public"
               }
             ],
             "styles": [
               "projects/demo-app/src/styles.scss",
-              "projects/angular-ui-kit/src/lib/styles/lib-styles.scss"
+              "projects/angular-ui-kit/src/lib/styles/lib-styles.scss",
+              "node_modules/intl-tel-input/build/css/intl-tel-input.css"
             ],
             "scripts": [
               "node_modules/preline/preline.js"

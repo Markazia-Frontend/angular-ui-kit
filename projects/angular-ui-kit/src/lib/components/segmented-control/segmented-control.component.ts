@@ -95,7 +95,7 @@ export class SegmentedControlComponent {
    */
   getSegmentStyle(): { [key: string]: string } {
     const sizeMap: Record<string, string> = {
-      sm: '6px 12px',
+      sm: '8px 12px',
       md: '10px 12px',
       lg: '16px 18px'
     };

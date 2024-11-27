@@ -18,12 +18,21 @@
       transition: background-color 0.2s, color 0.2s;
       user-select: none;
       border-radius: 6px;
-      color: $brand-700;
+      color: $brand-600;
       display: flex;
       align-items: center;
-      gap: 2px;
+      gap: 4px;
+
+      &:hover {
+        color: $brand-700;
+      }
+
       span {
         height: 20px;
+      }
+
+      .icon {
+        height: 16px;
       }
 
       &.selected {
@@ -32,15 +41,34 @@
       }
   
       &.disabled {
-        background-color: #e0e0e0;
-        color: #9e9e9e;
+        background-color: $white;
+        color: $brand-400;
         cursor: not-allowed;
       }
   
       svg {
         margin-right: 8px;  
         height: 20px;
+       
       }
     }
   }
-  
+
+
+
+  .segment.small {
+    
+  }
+
+  .segment.medium {
+    font-weight: 500;
+  }
+
+  .segment.large {
+    font-weight: bold;
+    font-size: 16px;
+
+    .icon {
+      height: 20px !important;
+    }
+  }

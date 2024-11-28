@@ -1,5 +1,5 @@
-<div class="toast-container">
-    <div *ngFor="let toast of toasts" [ngClass]="['toast', toast.type]">
+<div class="toast-container" [ngClass]="{ 'show': isVisible, 'hide': !isVisible }">
+    <div *ngFor="let toast of toasts" [ngClass]="['toast', toast.type]" >
         <!-- Render SVG Icon -->
         <div class="toast-icon" *ngIf="toast.icon && WithSVG" [innerHTML]="toast.icon"></div>
         

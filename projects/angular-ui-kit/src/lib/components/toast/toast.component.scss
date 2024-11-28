@@ -21,10 +21,14 @@
     margin-bottom: 10px;
     margin-top: 10px;
     font-size: 16px;
+    position: relative;
 }
 
 
 .close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
     font-size: 15px;
     font-weight: 700;
     color: #626262;
@@ -53,3 +57,13 @@
     flex-direction: column;
     gap: 5px;
 }
+
+.toast-container.hide {
+    display: none !important;
+}
+
+
+.toast-container.show {
+    display: block;
+}
+

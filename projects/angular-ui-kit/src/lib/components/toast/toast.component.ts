@@ -93,6 +93,7 @@ export class ToastComponent {
   @Input() withClose: boolean = false;        // Whether to display a close button on the toast.
   @Input() defaultIcon: string = '';          // Default SVG icon if no icon is provided.
   toasts: { title:string;subTitle?:string ; type: 'success' | 'error' | 'info' | 'warning'; icon?: SafeHtml }[] = [];
+  isVisible: boolean = false; // Controls visibility of the toast-container
 
   constructor(
     private sanitizer: DomSanitizer,          // Used to sanitize icon HTML to prevent XSS vulnerabilities.
@@ -118,6 +119,8 @@ export class ToastComponent {
       icon: sanitizedIcon,
     });
 
+    this.isVisible = true;
+
     // Automatically remove the toast after a timeout
     setTimeout(() => {
       this.removeToast(this.toasts[0]);  // Removes the first toast
@@ -132,5 +135,8 @@ export class ToastComponent {
    */
   removeToast(toast: { title:string;subTitle?:string ; type: string; icon?: SafeHtml }): void {
     this.toasts = this.toasts.filter((t) => t !== toast);
+    if (this.toasts.length === 0) {
+      this.isVisible = false; // Hide the container when no toasts are present
+    }
   }
 }

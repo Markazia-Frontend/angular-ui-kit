@@ -1,6 +1,39 @@
-<div class="custom-select">
-  <select [(ngModel)]="selectedOption" (change)="onSelect(selectedOption)">
-    <option value="" disabled selected>{{ placeholder || 'Choose value' }}</option>
-    <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-  </select>
+<div class="custom-dropdown" 
+     [ngClass]="[size, isOpen ? 'active' : '', hasClicked && !isValid() ? 'not-valid' : '']">
+
+  <div class="dropdown-header" (click)="toggleDropdown()">
+    <!-- Display Icon if provided -->
+    <span class="dropdown-icon" *ngIf="sanitizedIconSvg" [innerHTML]="sanitizedIconSvg"></span>
+
+    <!-- Display placeholder if no item is selected -->
+    <span *ngIf="!selectedItem?.id" class="placeholder">
+      {{ placeholder }}
+    </span>
+
+    <!-- Display selected item if available -->
+    <span *ngIf="selectedItem?.id" class="selected-option">
+      {{ selectedItem?.label }}
+    </span>
+
+    <!-- Dropdown arrow icon -->
+    <span class="dropdown-arrow">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M5.29289 7.29289C5.68342 6.90237 6.31658 6.90237 6.70711 7.29289L10 10.5858L13.2929 7.29289C13.6834 6.90237 14.3166 6.90237 14.7071 7.29289C15.0976 7.68342 15.0976 8.31658 14.7071 8.70711L10.7071 12.7071C10.3166 13.0976 9.68342 13.0976 9.29289 12.7071L5.29289 8.70711C4.90237 8.31658 4.90237 7.68342 5.29289 7.29289Z"
+          fill="#626262" />
+      </svg>
+    </span>
+  </div>
+
+  <div *ngIf="isOpen" class="dropdown-menu">
+    <div *ngFor="let option of options" class="dropdown-item" (click)="selectItem(option)">
+      {{ option.label }}
+    </div>
+  </div>
+
+</div>
+
+<!-- Validation Message only when clicked but no value selected -->
+<div *ngIf="hasClicked && required && !isValid()" class="error-message">
+  This field is required
 </div>

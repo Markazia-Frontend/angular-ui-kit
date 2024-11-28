@@ -25,3 +25,4 @@ export * from './lib/components/custom-multi-line-accordion/custom-multi-line-ac
 export * from './lib/components/custom-radiobutton-group-component/custom-radiobutton-group-component.component';
 export * from './lib/components/popover-button/popover-button.component';
 export * from './lib/components/loading-spinner/loading-spinner.component';
+export * from './lib/components/progress-bar/progress-bar.component';

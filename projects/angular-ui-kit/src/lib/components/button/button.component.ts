@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
 /**
  * A reusable button component that supports multiple styles, sizes, and states.
  * This component allows you to create buttons with different types, sizes, icon placements,
@@ -45,22 +46,38 @@ import { Component, Input, Output, EventEmitter, ViewEncapsulation } from '@angu
 @Component({
   selector: 'lib-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,LoadingSpinnerComponent],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss',
-  encapsulation:ViewEncapsulation.None
+  styleUrls: ['./button.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ButtonComponent {
   @Input() size: 'small' | 'medium' | 'big' = 'medium';
   @Input() type: 'primary' | 'secondary' | 'tertiary' = 'primary';
   @Input() mode: 'default' | 'hover' | 'loading' | 'disabled' = 'default';
   @Input() iconPosition: 'left' | 'right' | 'none' = 'none';
-  @Input() icon: string | null = null;
+  /**
+   * Accepts an SVG string or null for the button's icon.
+   */
+  private _icon: string | null = null;
+  sanitizedIcon: SafeHtml | null = null;
+
+  @Input() set icon(value: string | null) {
+    this._icon = value;
+    this.sanitizedIcon = value ? this.sanitizer.bypassSecurityTrustHtml(value) : null;
+  }
+
+  get icon(): string | null {
+    return this._icon;
+  }
+
   @Input() label: string = '';
   @Input() isLoading: boolean = false;
   @Input() disabled: boolean = false;
   @Input() tooltip: string | null = null;
   @Output() click = new EventEmitter<void>();
+
+  constructor(private sanitizer: DomSanitizer) {}
 
   /**
    * Emits the click event when the button is clicked, provided the button is not disabled or in loading state.

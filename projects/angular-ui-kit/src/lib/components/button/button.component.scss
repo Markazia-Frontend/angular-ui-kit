@@ -10,7 +10,7 @@
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   margin: 4px;
-  min-width: 100px;
+  gap: 7px;
 
   &.cursor-not-allowed {
     cursor: not-allowed;
@@ -25,13 +25,15 @@
     font-size: 14px;
     padding: 6px 12px;
   }
+
   &.medium {
     font-size: 16px;
     padding: 10px 16px;
   }
+
   &.big {
     font-size: 18px;
-    padding: 16px 24px;
+    padding: 16px;
   }
 
   /* Button Types */
@@ -45,10 +47,12 @@
     &:hover:not(.disabled) {
       background-color: $brand-700;
     }
+
     &.loading {
       background-color: $brand-200;
       cursor: progress;
     }
+
     &.disabled {
       background-color: $brand-100;
       color: $brand-400;
@@ -63,41 +67,61 @@
     &:hover:not(.disabled) {
       border-color: $brand-700;
       color: $brand-700;
+
+      svg {
+        path {
+          fill: $brand-700 !important;
+        }
+      }
     }
+
     &.loading {
       border-color: $brand-400;
       color: $brand-400;
       cursor: progress;
     }
+
     &.disabled {
       background-color: $brand-100;
       color: $brand-400;
       border: none;
       cursor: auto;
     }
+
+    .icon path {
+      fill: #626262;
+    }
   }
 
-  
+
   &.tertiary {
-    border:none;
+    border: none;
 
     &.default {
       background-color: $brand-100;
       color: $brand-500;
     }
+
     &.hover:not(.disabled) {
       background-color: $brand-100;
       color: $brand-600;
+
     }
+
     &.loading {
-     background-color: $white;
-     color: $brand-600;
-     cursor: progress;
+      background-color: $white;
+      color: $brand-600;
+      cursor: progress;
     }
+
     &.disabled {
       background-color: $white;
       color: $brand-400;
       cursor: auto;
+    }
+
+    .icon path {
+      fill: $brand-600;
     }
   }
 
@@ -109,7 +133,7 @@
     margin-right: 0.5rem;
 
     svg {
-      width:24px;
+      width: 24px;
       height: 24px;
     }
   }

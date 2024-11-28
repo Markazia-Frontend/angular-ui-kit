@@ -11,7 +11,7 @@
     }
     &.small {
       --padding: 6px 8px;
-      --font-size: 12px;
+      --font-size: 14px;
 
       .stepper-button {
         width: 36px;
@@ -58,7 +58,7 @@
   
     &.large {
       --padding: 16px;
-      --font-size: 20px;
+      --font-size: 16px;
 
 
       .stepper-button {
@@ -82,7 +82,7 @@
   
     .stepper-input {
       width: 85px;
-      text-align: center;
+      text-align: left;
       font-size: var(--font-size);
       border: 1px solid $brand-400;
       padding: var(--padding);

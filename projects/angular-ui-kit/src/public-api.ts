@@ -24,3 +24,4 @@ export * from './lib/components/custom-input-suffix-prefix/custom-input-suffix-p
 export * from './lib/components/custom-multi-line-accordion/custom-multi-line-accordion.component';
 export * from './lib/components/custom-radiobutton-group-component/custom-radiobutton-group-component.component';
 export * from './lib/components/popover-button/popover-button.component';
+export * from './lib/components/loading-spinner/loading-spinner.component';

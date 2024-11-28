@@ -7,7 +7,9 @@
         padding: 5px;
 
         .spinner {
-            background: linear-gradient(180deg, #FFFFFF 50%, rgba(255, 255, 255, 0) 90%);
+            background: linear-gradient(180deg,
+                    #FFFFFF 100%,
+                    rgba(255, 255, 255, 0) 100%);
         }
     }
 

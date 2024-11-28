@@ -20,6 +20,10 @@
         justify-content: space-between;
         padding: 12px;
   
+        &.big {
+          padding: 14px;
+        }
+
         .icon {
           margin-right: 12px;
           &.no-icon {

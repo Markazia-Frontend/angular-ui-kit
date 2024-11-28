@@ -13,6 +13,7 @@ export class AccordionComponent implements OnInit {
   @Input() headline!: string;
   @Input() subtext?: string;
   @Input() icon?: string;
+  @Input() size?: 'default'|'big' = 'default' ;
 
   isOpen: boolean = false;
   sanitizedIcon?: SafeHtml;

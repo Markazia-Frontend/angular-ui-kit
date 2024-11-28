@@ -15,6 +15,7 @@ export class CustomMultiLineAccordionComponent {
   @Input() footerLabel: string = ''; // Label for the footer
   @Input() footerRightText: string = ''; // Right-aligned text for the footer
   @Input() items: { label: string; content: string; rightText?: string; icon?: string }[] = []; // Accordion items
+  @Input() size?: 'default'|'big' = 'default' ;
 
   isOpen: boolean = false; // Tracks whether the accordion is open or closed
 

@@ -1,6 +1,6 @@
 <div class="accordion">
     <!-- Accordion Header -->
-    <div class="accordion-header" (click)="toggleAccordion()">
+    <div class="accordion-header" (click)="toggleAccordion()" [ngClass]="{'default': size === 'default', 'big': size === 'big'}">
       <span class="label">{{ headerLabel }}</span>
       <span class="right-text">{{ headerRightText }}</span>
       <span class="arrow-icon">

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 /**
@@ -87,17 +87,17 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./toast.component.scss'],
 })
 export class ToastComponent {
-  @Input() WithSVG: boolean = false;          // Whether to include an SVG icon in the toast.
+  @Input() WithSVG!: boolean;          // Whether to include an SVG icon in the toast.
   @Input() WithAction: boolean = false;       // Whether to include an action button.
   @Input() ActionLabel: string = '';          // Label for the action button.
   @Input() withClose: boolean = false;        // Whether to display a close button on the toast.
   @Input() defaultIcon: string = '';          // Default SVG icon if no icon is provided.
-  toasts: { title:string;subTitle?:string ; type: 'success' | 'error' | 'info' | 'warning'; icon?: SafeHtml }[] = [];
+  toasts: { title: string; subTitle?: string; type: 'success' | 'error' | 'info' | 'warning'; icon?: SafeHtml }[] = [];
   isVisible: boolean = false; // Controls visibility of the toast-container
 
   constructor(
     private sanitizer: DomSanitizer,          // Used to sanitize icon HTML to prevent XSS vulnerabilities.
-  ) {}
+  ) { }
 
   /**
    * Add a new toast message.
@@ -109,10 +109,12 @@ export class ToastComponent {
    *   icon: `<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>`
    * });
    */
-  addToast(toast: { title:string;subTitle?:string ; type: 'success' | 'error' | 'info' | 'warning'; icon?: string }): void {
+  addToast(toast: { title: string; subTitle?: string; type: 'success' | 'error' | 'info' | 'warning'; icon?: string }): void {
     const sanitizedIcon: SafeHtml = toast.icon
       ? this.sanitizer.bypassSecurityTrustHtml(toast.icon)
       : this.sanitizer.bypassSecurityTrustHtml(this.defaultIcon);
+
+    this.toasts = [];
 
     this.toasts.push({
       ...toast,
@@ -133,7 +135,7 @@ export class ToastComponent {
    * @example
    * this.removeToast(this.toasts[0]); // Removes the first toast
    */
-  removeToast(toast: { title:string;subTitle?:string ; type: string; icon?: SafeHtml }): void {
+  removeToast(toast: { title: string; subTitle?: string; type: string; icon?: SafeHtml }): void {
     this.toasts = this.toasts.filter((t) => t !== toast);
     if (this.toasts.length === 0) {
       this.isVisible = false; // Hide the container when no toasts are present

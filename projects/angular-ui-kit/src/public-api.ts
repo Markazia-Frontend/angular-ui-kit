@@ -26,3 +26,4 @@ export * from './lib/components/custom-radiobutton-group-component/custom-radiob
 export * from './lib/components/popover-button/popover-button.component';
 export * from './lib/components/loading-spinner/loading-spinner.component';
 export * from './lib/components/progress-bar/progress-bar.component';
+export * from './lib/components/informational-toast/informational-toast.component';

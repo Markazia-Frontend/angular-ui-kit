@@ -10,24 +10,16 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     max-width: 760px;
-    padding: 8px 16px;
+    padding: 16px;
     display: flex;
     gap: 16px;
-
-    &.WithSVG{
-        padding: 8px 16px 8px 8px;
-    }
-
-    &.WithoutSVG{
-        padding: 8px 16px 8px 16px;
-    }
 }
 
 .toast {
     display: flex;
     color: $brand-700;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     font-size: 16px;
     position: relative;
 }
@@ -35,8 +27,8 @@
 
 .close-button {
     position: relative;
-    top: -10px;
-    right: -10px;
+    top: -19px;
+    right: -11px;
     font-size: 15px;
     font-weight: 700;
     color: #626262;
@@ -53,15 +45,8 @@
 }
 
 .toast-icon {
-    width: 26px;
-    height: 26px;
-}
-
-.action {
-    border: 1px solid $brand-600;
-    border-radius: 8px;
-    padding: 9px 12px;
-    background-color: $white;
+    width: 32px;
+    height: 32px;
 }
 
 .toast-haeder {
@@ -74,6 +59,17 @@
     display: none !important;
 }
 
+
 .toast-container.show {
     display: flex;
+}
+
+.title {
+    font-weight: 600;
+    color: $brand-600;
+}
+
+.sub-title {
+    font-size: 14px;
+    color: $brand-600;
 }

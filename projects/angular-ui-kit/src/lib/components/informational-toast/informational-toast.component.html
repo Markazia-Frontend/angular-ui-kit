@@ -1,0 +1,22 @@
+<div class="toast-container" [ngClass]="{ 
+    'show': isVisible, 
+    'hide': !isVisible, 
+  }">
+  
+
+    <div *ngFor="let toast of toasts" [ngClass]="['toast']">
+        <!-- Render SVG Icon -->
+        <div [innerHTML]="toast.icon"></div>
+        
+        <!-- Toast Message -->
+        <div class="toast-haeder">
+            <span *ngIf="toast.title" class="title">{{ toast.title }}</span>
+            <span class="sub-title">{{ toast.subTitle }}</span>
+        </div>
+
+        <!-- Close Button -->
+        <button class="close-button"
+            (click)="removeToast(toast)">&#10006;</button>
+    </div>
+
+</div>

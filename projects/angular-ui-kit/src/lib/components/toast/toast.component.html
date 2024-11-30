@@ -1,16 +1,26 @@
-<div class="toast-container" [ngClass]="{ 'show': isVisible, 'hide': !isVisible }">
-    <div *ngFor="let toast of toasts" [ngClass]="['toast', toast.type]" >
+<div class="toast-container" [ngClass]="{ 
+    'show': isVisible, 
+    'hide': !isVisible, 
+    'WithSVG': WithSVG ,
+    'WithoutSVG': !WithSVG 
+  }">
+    <div *ngFor="let toast of toasts" [ngClass]="['toast', toast.type]">
         <!-- Render SVG Icon -->
-        <div class="toast-icon" *ngIf="toast.icon && WithSVG" [innerHTML]="toast.icon"></div>
+        <div  [ngClass]="{ 
+            'WithSVG': WithSVG ,
+            'WithoutSVG': !WithSVG 
+          }" *ngIf="WithSVG" class="toast-icon" [innerHTML]="toast.icon"></div>
         
         <!-- Toast Message -->
         <div class="toast-haeder">
-            <span class="title">{{ toast.title }}</span>
+            <span *ngIf="toast.title" class="title">{{ toast.title }}</span>
             <span class="sub-title">{{ toast.subTitle }}</span>
         </div>
-        <button class="action" *ngIf="WithAction">{{ActionLabel}}</button>
-
-        <button class="close-button" *ngIf="withClose && toasts[0].title && toasts[0].subTitle" (click)="removeToast(toast)">&#10006;</button>
+        
         <!-- Close Button -->
+        <button class="close-button" *ngIf="withClose && toasts[0].title && toasts[0].subTitle"
+            (click)="removeToast(toast)">&#10006;</button>
     </div>
+    <button class="action" *ngIf="WithAction">{{ActionLabel}}</button>
+
 </div>

@@ -42,6 +42,11 @@ export class PopoverButtonComponent {
 
   constructor(private sanitizer: DomSanitizer) {}
 
+   /**
+   * The button size.
+   */
+   @Input() size?: 'medium' | 'small' = 'medium';
+
   /**
    * The button text.
    * @example 'Click me to toggle popover'

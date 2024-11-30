@@ -4,7 +4,6 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    padding: 10px;
     cursor: pointer;
     background-color: #fff;
     border-radius: 5px;
@@ -12,6 +11,16 @@
     color: #333;
     border-radius: 8px;
     color: $brand-600;
+
+    
+    &.small {
+        padding: 8px;
+    }
+
+    &.medium {
+        padding: 12px;
+    }
+
   }
   
   .popover-btn:hover {
@@ -26,7 +35,7 @@
   
   .popover {
     position: absolute;
-    padding: 10px;
+    padding: 16px 24px 32px 24px;
     background-color: #fff;
     border: 1px solid #E2E8F0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -37,5 +46,6 @@
     border-radius: 8px;
     text-align: left;
     min-width: 250px;
+
   }
   

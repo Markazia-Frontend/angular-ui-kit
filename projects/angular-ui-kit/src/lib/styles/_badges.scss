@@ -5,9 +5,9 @@ $badge-sizes: (
 );
 
 $badge-padding: (
-  small: 4px 8px,
-  medium: 6px 12px,
-  big: 8px 16px
+  small: 8px,
+  medium: 8px 12px,
+  big: 8px 12px
 );
 
 $badge-font-weights: (
@@ -33,6 +33,7 @@ $badge-font-weights: (
       font-size: $size;
       padding: map-get($badge-padding, $name);
       font-weight: map-get($badge-font-weights, $name);
+      gap: 4px;
     }
   }
 }

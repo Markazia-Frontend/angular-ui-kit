@@ -34,6 +34,7 @@ $tag-font-weights: (
       font-size: $size;
       padding: map-get($tag-padding, $name);
       font-weight: map-get($tag-font-weights, $name);
+      gap: 4px;
     }
   }
 }

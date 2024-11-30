@@ -18,7 +18,7 @@ $breadcrumb-active-color: red;
     &__item {
       font-size: 14px;
       color: $breadcrumb-color;
-      padding: 8px 12px;
+      padding: 10px;
       display: inline-flex;
       align-items: center;
   
@@ -34,10 +34,11 @@ $breadcrumb-active-color: red;
     }
   
     &__divider {
-      margin: 0 8px;
       color: $breadcrumb-divider-color;
       font-size: 14px;
-  
+      width: 20px;
+      height: 20px;
+      
       // Use pseudo-element for the content
       &::before {
         content: url(../assets/icons/cheveron-right.svg);
@@ -46,3 +47,10 @@ $breadcrumb-active-color: red;
     }
   }
   
+
+  li.breadcrumb__item.breadcrumb__item--active {
+    color: $brand-700;
+    font-weight: 500;
+    background-color: $brand-100;
+    border-radius: 6px;
+  }

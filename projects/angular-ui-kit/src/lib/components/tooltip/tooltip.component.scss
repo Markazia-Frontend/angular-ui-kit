@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,9 +21,9 @@ span {
     background-color: white;
     width: 120px;
     font-size: 18px;
-    padding: 5px;
+    padding: 12px 16px;
     opacity: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid $brand-100;
     border-radius: 8px;
 }
 button:hover {
@@ -39,6 +41,7 @@ span::after {
 button[data-position="top"] span {
     top: -45px;
     left: -10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 button[data-position="top"] span::after {
     border-top-color: white; /* Match tooltip background */
@@ -48,6 +51,8 @@ button[data-position="top"] span::after {
 button[data-position="left"] span {
     top: 20px;
     left: -114px;
+    box-shadow: 0px 0px 1px -1px #00000066, 0px 4px 6px -1px #00000026;
+
 }
 button[data-position="left"] span::after {
     border-left-color: white; /* Match tooltip background */
@@ -66,9 +71,11 @@ button[data-position="bottom"] span::after {
 button[data-position="right"] span {
     top: 10px;
     right: -150px;
+    box-shadow: -10px -1px 15px -9px rgba(0, 0, 0, 0.4), 6px 9px 14px -6px rgba(0, 0, 0, 0.1490196078);
+
 }
 button[data-position="right"] span::after {
     border-right-color: white; /* Match tooltip background */
-    left: -20px;
-    bottom: 5px;
+    left: -19px;
+    bottom: 9px;
 }

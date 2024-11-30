@@ -9,7 +9,7 @@
         small: size === 'sm',
         medium: size === 'md',
         large: size === 'lg'
-      }" [ngStyle]="getSegmentStyle()" (click)="onRadioChange(i)">
+      }" (click)="onRadioChange(i)">
       <div *ngIf="button.icon" class="icon" [innerHTML]="getSanitizedIcon(button.icon)"></div>
       <span>{{ button.label }}</span>
     </div>

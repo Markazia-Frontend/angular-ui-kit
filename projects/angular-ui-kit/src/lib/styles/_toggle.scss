@@ -1,14 +1,13 @@
-
 @import './_colors.scss';
 
 $toggle-width: 48px;
 $toggle-height: 28px;
 $toggle-border-radius: 25px;
-$toggle-bg-on: $brand-700; 
+$toggle-bg-on: $brand-700;
 $toggle-bg-off: $brand-200;
-$toggle-bg-disabled: $brand-100; 
-$toggle-knob-color: $brand-100; 
-$toggle-disabled-knob-color: $white; 
+$toggle-bg-disabled: $brand-100;
+$toggle-knob-color: $brand-100;
+$toggle-disabled-knob-color: $white;
 $toggle-transition: 0.3s ease;
 
 // Mixin for toggles
@@ -59,7 +58,7 @@ $toggle-transition: 0.3s ease;
 .toggle-input {
   display: none;
 
-  &:checked + .toggle {
+  &:checked+.toggle {
     background-color: $toggle-bg-on;
 
     &:before {
@@ -67,11 +66,25 @@ $toggle-transition: 0.3s ease;
     }
   }
 
-  &:disabled + .toggle {
+  &:disabled+.toggle {
     background-color: $toggle-bg-disabled;
 
     &:before {
       background-color: $toggle-disabled-knob-color;
     }
+  }
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .text {
+    font-size: 16px;
+    color: $brand-700;
+  }
+
+  .text.diabled {
+    color: $brand-500;
   }
 }

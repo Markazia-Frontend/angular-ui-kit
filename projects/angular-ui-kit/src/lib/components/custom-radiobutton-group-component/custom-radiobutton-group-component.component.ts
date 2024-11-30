@@ -92,20 +92,4 @@ export class CustomRadiobuttonGroupComponentComponent {
       this.selectionChange.emit(this.selectedIndex);
     }
   }
-
-  /**
-   * Dynamically generates the padding style based on the selected size.
-   * @returns An object containing the padding style
-   */
-  getSegmentStyle(): { [key: string]: string } {
-    const sizeMap: Record<string, string> = {
-      sm: '8px 12px',
-      md: '10px 12px',
-      lg: '16px 18px'
-    };
-
-    return {
-      padding: sizeMap[this.size] || sizeMap['md']
-    };
-  }
 }

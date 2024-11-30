@@ -16,7 +16,7 @@ $radio-dot-color: white; // Inner dot color
         position: relative;
         cursor: pointer;
         line-height: $radio-size;
-        padding-left: $radio-size + 10;
+        padding-left: $radio-size + 8;
         font-size: $radio-size - 2;
         font-family: sans-serif;
         color: $brand-600;
@@ -101,8 +101,8 @@ $radio-dot-color: white; // Inner dot color
 
         &:after {
             background-color: $radio-dot-color;
-            top: 11px;
-            left: 11px;
+            top: 10px;
+            left: 10px;
         }
     }
 }

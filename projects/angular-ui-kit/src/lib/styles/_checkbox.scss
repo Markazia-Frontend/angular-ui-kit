@@ -100,3 +100,12 @@ $checkbox-selected:$brand-700 ;
     }
   }
 }
+
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: $brand-600;
+}

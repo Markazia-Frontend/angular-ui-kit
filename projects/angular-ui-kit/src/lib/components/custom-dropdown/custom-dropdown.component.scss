@@ -2,15 +2,16 @@
 
 .custom-dropdown {
     position: relative;
-    width: 250px;
-    font-family: Arial, sans-serif;
     cursor: pointer;
     color: $brand-600;
-    border: 2px solid #cecece;
-    outline: 2px solid #f5f5f5;
+    border: 2px solid $brand-300;
     border-radius: 8px;
     font-size: 14px;
     padding: 0;
+
+    &.small {
+        border-radius: 4px; 
+    }
 
     .dropdown-header {
         display: flex;
@@ -39,14 +40,13 @@
 
         .dropdown-header {
             font-size: 12px;
-            padding: 4px 10px;
+            padding: 10px;
         }
 
         .dropdown-menu .dropdown-item {
             font-size: 12px;
-            margin: 7px 4px;
-            border-radius: 8px;
-            padding: 6px;
+            border-radius: 4px;
+            padding: 10px;
         }
     }
 
@@ -54,14 +54,13 @@
 
         .dropdown-header {
             font-size: 14px;
-            padding: 6px 10px;
+            padding: 12px;
         }
 
         .dropdown-menu .dropdown-item {
             font-size: 14px;
-            margin: 8px 6px;
             border-radius: 8px;
-            padding: 8px;
+            padding: 10px;
         }
     }
 
@@ -69,14 +68,13 @@
 
         .dropdown-header {
             font-size: 16px;
-            padding: 12px 10px;
+            padding:18px 12px;
         }
 
         .dropdown-menu .dropdown-item {
             font-size: 16px;
-            margin: 8px;
             border-radius: 8px;
-            padding: 8px;
+            padding: 12px;
         }
     }
 
@@ -106,6 +104,7 @@
         border-radius: 8px;
         z-index: 10;
         box-shadow: 0px 10px 22px 0px #2D4D6C26;
+        padding: 4px;
 
         .dropdown-item {
             cursor: pointer;
@@ -121,4 +120,8 @@
 .no-results-found .dropdown-item:hover {
     cursor: not-allowed !important;
     background-color: #FFF !important;
+}
+
+.custom-dropdown.focused {
+    outline: 2px solid $brand-100;
 }

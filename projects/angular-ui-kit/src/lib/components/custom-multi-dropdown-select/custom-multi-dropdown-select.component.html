@@ -1,7 +1,7 @@
-<div class="custom-multi-dropdown" [ngClass]="size">
+<div class="custom-multi-dropdown" [ngClass]="[isFocused?'focused':'',size]">
   <div class="dropdown-header">
     <input type="text" class="dropdown-search" [(ngModel)]="searchQuery" (input)="onSearchInput()"
-      (keydown.enter)="addIfNotExists()" (focus)="onFocus()" placeholder="Type to search or add" />
+      (keydown.enter)="addIfNotExists()" (focus)="onFocus()" (blur)="onBlur()" placeholder="Type to search or add" />
 
     <span class="dropdown-arrow" (click)="toggleDropdown()">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

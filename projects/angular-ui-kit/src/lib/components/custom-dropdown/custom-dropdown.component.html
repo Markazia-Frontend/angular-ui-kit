@@ -1,4 +1,4 @@
-<div class="custom-dropdown" [ngClass]="size">
+<div class="custom-dropdown" [ngClass]="[isFocused?'focused':'',size]">
     <div class="dropdown-header">
       <input
         type="text"

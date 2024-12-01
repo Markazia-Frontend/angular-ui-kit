@@ -50,7 +50,7 @@ export class CustomDropdownComponent {
   selectedItem: { id: number; label: string } | null = null; // Selected item
   searchQuery = ''; // Current search query
   filteredItems: { id: number; label: string }[] = []; // Filtered items based on search query
-
+  isFocused: boolean = false;
   /**
    * Initializes the component and sets the filtered items to all available items.
    */
@@ -107,6 +107,7 @@ export class CustomDropdownComponent {
    * Filters the items as the user types.
    */
   onFocus() {
+    this.isFocused = true;
     this.isOpen = true;
     this.filterItems();  // Filter items when input gains focus
   }
@@ -116,6 +117,7 @@ export class CustomDropdownComponent {
    * Adds a slight delay to allow the user to click on dropdown items.
    */
   onBlur() {
+    this.isFocused = false;
     setTimeout(() => {
       this.isOpen = false;
     }, 200);

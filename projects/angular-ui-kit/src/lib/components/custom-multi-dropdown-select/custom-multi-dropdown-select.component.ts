@@ -61,6 +61,7 @@ export class CustomMultiDropdownSelectComponent implements OnInit {
   filteredGroupedItems: any[] = []; // Filtered grouped items (if any)
   filteredUngroupedItems: any[] = []; // Filtered ungrouped items
   private debounceTimeout: any; // Timeout for debouncing the search input
+  isFocused : boolean = false;
 
   constructor(private sanitizer: DomSanitizer) {}
 
@@ -182,6 +183,7 @@ export class CustomMultiDropdownSelectComponent implements OnInit {
    * Handles focus event to open the dropdown and filter items.
    */
   onFocus() {
+    this.isFocused = true;
     this.isOpen = true;
     this.filterItems();
   }
@@ -199,6 +201,10 @@ export class CustomMultiDropdownSelectComponent implements OnInit {
     this.debounceTimeout = setTimeout(() => {
       this.filterItems();
     }, 700);
+  }
+
+  onBlur() {
+    this.isFocused = false;
   }
 
   /**

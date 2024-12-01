@@ -47,6 +47,7 @@ $input-padding-big: 18px 12px;
   &.input-small {
     font-size: 14px;
     padding: $input-padding-small;
+    border-radius: 4px;
   }
 
   &.input-medium {

@@ -1,13 +1,13 @@
 @import '../../styles/_colors.scss';
 
-$input-padding-small: 8px 10px;
-$input-padding-medium: 10px 12px;
-$input-padding-big: 16px 12px;
+$input-padding-small: 10px;
+$input-padding-medium: 12px;
+$input-padding-big: 18px 12px;
 
 .input-container {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .input-label {
@@ -26,6 +26,23 @@ $input-padding-big: 16px 12px;
   font-size: 16px;
   outline: none;
   width: 100%; 
+
+  &:focus{
+    outline: 2px solid $brand-100;
+    outline-offset: 0;
+  }
+
+  &.icon-left-there.input-small {
+    padding-left: 36px;
+  }
+
+  &.icon-left-there.input-medium {
+    padding-left: 36px;
+  }
+
+  &.icon-left-there.input-big {
+    padding-left: 36px;
+  }
 
   &.input-small {
     font-size: 14px;
@@ -56,6 +73,11 @@ $input-padding-big: 16px 12px;
     background-color: $brand-200;
     cursor: not-allowed;
   }
+
+  &.input-invalid {
+    outline: 0;
+  }
+  
 }
 
 .input-icon {
@@ -76,5 +98,4 @@ $input-padding-big: 16px 12px;
 .error-message {
   color: $rose-600;
   font-size: 12px;
-  margin-top: 1px;
 }

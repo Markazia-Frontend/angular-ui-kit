@@ -2,9 +2,13 @@
     <label *ngIf="label" class="input-label">{{ label }}</label>
     <div class="input-wrapper">
       <!-- Left icon -->
-      <span *ngIf="iconLeft" class="input-icon input-icon-left">
+      <span *ngIf="iconLeft" class="">
         <i [class]="iconLeft"></i>
       </span>
+
+      <!-- Left Icon -->
+    <div *ngIf="sanitizedIconLeft" class="input-icon input-icon-left" [innerHTML]="sanitizedIconLeft"></div>
+
   
       <input
         type="text"
@@ -17,15 +21,16 @@
           'input-big': size === 'big',
           'input-valid': isValid,
           'input-invalid': !isValid && errorMessage,
-          'input-active': isActive
+          'input-active': isActive,
+          'icon-left-there' : iconLeft
+
         }"
         (input)="handleInputChange($event)"
       />
   
       <!-- Right icon -->
-      <span *ngIf="iconRight" class="input-icon input-icon-right">
-        <i [class]="iconRight"></i>
-      </span>
+      <div *ngIf="sanitizedIconRight" class="input-icon  input-icon-right" [innerHTML]="sanitizedIconRight"></div>
+
     </div>
     <div *ngIf="!isValid && errorMessage" class="error-message">{{ errorMessage }}</div>
   </div>

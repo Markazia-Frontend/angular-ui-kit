@@ -23,8 +23,7 @@
 }
 
 .datepicker-input {
-    min-width: 250px;
-    padding: 8px 10px;
+    padding: 12px;
     cursor: pointer;
     color: $brand-700;
     border: 2px solid #cecece;
@@ -45,7 +44,7 @@
     background: white;
     border: 2px solid $brand-200;
     border-radius: 8px;
-    padding: 20px 10px;
+    padding: 20px;
     box-shadow: 0px 4px 6px -2px #0000000D, 0px 10px 15px -3px #0000001A;
     padding-bottom: 14px;
 }
@@ -58,7 +57,6 @@
     color: $brand-600;
     font-weight: 500;
     font-size: 14px;
-    padding: 0px 6px;
 }
 
 svg:hover path {
@@ -105,7 +103,7 @@ svg:hover path {
 .days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 0px;
+    gap:0;
 }
 
 .week-days div {
@@ -119,8 +117,8 @@ svg:hover path {
     align-items: center;
     cursor: pointer;
     color: $brand-600;
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
     margin-bottom: 6px;
 }
 

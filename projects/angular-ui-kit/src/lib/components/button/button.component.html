@@ -1,10 +1,11 @@
 <button
   [disabled]="disabled || isLoading"
-  [ngClass]="[type, size, mode]"
+  [ngClass]="getButtonClasses()"
   class="lib-btn"
   [attr.title]="tooltip"
   (click)="handleClick()"
 >
+
   <!-- Icon-only button -->
   <ng-container *ngIf="isIconOnly; else content">
     <span *ngIf="sanitizedIcon" class="icon" [innerHTML]="sanitizedIcon"></span>

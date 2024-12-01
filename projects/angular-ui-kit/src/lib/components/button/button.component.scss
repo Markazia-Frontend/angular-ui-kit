@@ -23,7 +23,7 @@
   /* Button Sizes */
   &.small {
     font-size: 14px;
-    padding: 6px 12px;
+    padding: 8px 12px;
   }
 
   &.medium {
@@ -136,5 +136,37 @@
       width: 24px;
       height: 24px;
     }
+  }
+}
+
+.lib-btn.TextButton {
+  background-color: transparent !important;
+  color: $brand-500;
+  &:hover {
+    color: $brand-700;
+  }
+
+  &:disabled {
+    color: $brand-400;
+    path {
+      fill: $brand-400;
+    }
+  }
+
+  path {
+    fill: $brand-500;
+  }
+}
+
+.lib-btn.TextButton:hover path {
+  fill: $brand-700;
+}
+
+.lib-btn.disabled {
+  svg {
+    color: $brand-400;
+  }
+  path {
+    fill: $brand-400 !important;
   }
 }

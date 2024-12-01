@@ -56,6 +56,8 @@ export class ButtonComponent {
   @Input() type: 'primary' | 'secondary' | 'tertiary' = 'primary';
   @Input() mode: 'default' | 'hover' | 'loading' | 'disabled' = 'default';
   @Input() iconPosition: 'left' | 'right' | 'none' = 'none';
+  @Input() IsTextButton?: boolean = false;
+  
   /**
    * Accepts an SVG string or null for the button's icon.
    */
@@ -94,5 +96,15 @@ export class ButtonComponent {
    */
   get isIconOnly() {
     return !this.label && this.icon;
+  }
+
+  getButtonClasses(): Record<string, boolean> {
+    return {
+      disabled: this.disabled ?? false,
+      TextButton: this.IsTextButton ?? false,
+      [this.type]: true,
+      [this.size]: true,
+      [this.mode]: true,
+    };
   }
 }

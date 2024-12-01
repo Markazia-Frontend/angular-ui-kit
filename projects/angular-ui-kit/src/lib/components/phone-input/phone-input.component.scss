@@ -3,7 +3,6 @@
 .phone-input-container {
   display: flex;
   align-items: center;
-  max-width: 250px !important;
 
   .dropdown {
     padding: 0.5rem;
@@ -23,7 +22,7 @@
 button#dropdown-phone-button {
   background-color: white !important;
   border: 1px solid $brand-300;
-  padding: 10px;
+  padding: 14px;
 }
 
 button#dropdown-phone-button:focus {
@@ -35,7 +34,7 @@ outline-offset: 0;
 input#phone-input {
   background-color: white !important;
   border: 1px solid $brand-400;
-  padding: 8px;
+  padding: 12px;
 }
 
 button.option  {
@@ -47,12 +46,12 @@ button.option:hover {
 }
 
 .options-container {
-  padding: 10px;
+  padding: 4px;
 }
 
 button.option {
   color: #0F172A;
-
+  padding: 10px 16px;
 }
 
 div#dropdown-phone {

@@ -142,6 +142,8 @@
 .lib-btn.TextButton {
   background-color: transparent !important;
   color: $brand-500;
+  padding: 0;
+  
   &:hover {
     color: $brand-700;
   }

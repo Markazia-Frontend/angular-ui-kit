@@ -64,7 +64,6 @@ export class CustomDropdownComponent {
    */
   toggleDropdown() {
     this.isOpen = !this.isOpen;
-    if (!this.isOpen) this.resetSearch();
   }
 
   /**
@@ -91,15 +90,6 @@ export class CustomDropdownComponent {
     this.selectedItem = item;
     this.selectionChange.emit(item);
     this.isOpen = false;
-    this.resetSearch();
-  }
-
-  /**
-   * Resets the search query and restores the filtered items list to the original list.
-   */
-  private resetSearch() {
-    this.searchQuery = '';
-    this.filteredItems = this.items;
   }
 
   /**

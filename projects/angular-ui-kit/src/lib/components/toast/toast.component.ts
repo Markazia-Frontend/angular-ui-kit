@@ -87,6 +87,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./toast.component.scss'],
 })
 export class ToastComponent {
+  @Input() toastDuration: number = 3000;
   @Input() WithSVG!: boolean;          // Whether to include an SVG icon in the toast.
   @Input() WithAction: boolean = false;       // Whether to include an action button.
   @Input() ActionLabel: string = '';          // Label for the action button.
@@ -126,7 +127,7 @@ export class ToastComponent {
     // Automatically remove the toast after a timeout
     setTimeout(() => {
       this.removeToast(this.toasts[0]);  // Removes the first toast
-    }, 3000);  // Set toast duration to 3 seconds
+    }, this.toastDuration);
   }
 
   /**

@@ -3,7 +3,7 @@
 .tab {
     padding-left: 0;
     padding-right: 0;
-    margin: 0 10px;
+    margin: 0 16px;
     color: $brand-600;
     &.active {
         color: $brand-700;
@@ -15,12 +15,12 @@
 }
 
 .tab-mobile {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 40px;
+    padding-right: 40px;
     margin: 0;
     &.active {
         color: $brand-700;
-        border-bottom: 3px solid $brand-700;
+        border-bottom: 2px solid $brand-700;
         svg {
             color: $brand-700;
         }

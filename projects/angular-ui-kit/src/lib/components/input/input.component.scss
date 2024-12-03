@@ -29,6 +29,10 @@ $input-padding-big: 18px 12px;
   color: $brand-700;
   padding-right: 0 !important;
 
+  &::placeholder {
+    color: $brand-400;
+  }
+
   &:focus{
     outline: 2px solid $brand-100;
     outline-offset: 0;
@@ -79,6 +83,10 @@ $input-padding-big: 18px 12px;
 
   &.input-invalid {
     outline: 0;
+  }
+
+  &:hover {
+    border-color: $brand-600;
   }
   
 }

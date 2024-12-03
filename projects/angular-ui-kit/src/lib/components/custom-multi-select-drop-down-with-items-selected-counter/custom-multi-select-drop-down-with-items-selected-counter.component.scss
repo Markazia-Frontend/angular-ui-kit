@@ -1,0 +1,139 @@
+@import '../../styles/colors';
+
+.custom-multi-dropdown {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  color: $brand-600;
+  border: 2px solid $brand-300;
+  border-radius: 8px;
+  font-size: 14px;
+
+  &.focused {
+    outline: 2px solid $brand-100;
+  }
+
+  &.small {
+    border-radius: 4px;
+
+    .dropdown-menu {
+      border-radius: 4px;
+    }
+  }
+
+  .dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+
+    .dropdown-search {
+      border: none;
+      outline: none;
+      flex-grow: 1;
+      font-size: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 118%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0px 10px 22px 0px #2d4d6c26;
+    padding: 4px;
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+      margin-bottom: 3px;
+      &:hover {
+        background-color: $brand-100;
+      }
+
+      &.selected {
+        background-color: $brand-100;
+      }
+
+      .item-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  &.small {
+    .dropdown-header {
+      font-size: 12px;
+      padding: 8px 10px;
+    }
+
+    .dropdown-menu {
+      border-radius: 4px;
+    }
+
+    .dropdown-menu .dropdown-item {
+      font-size: 12px;
+      padding: 10px;
+    }
+  }
+
+  &.medium {
+    .dropdown-header {
+      font-size: 14px;
+      padding: 12px;
+    }
+
+    .dropdown-menu .dropdown-item {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+
+  &.large {
+    .dropdown-header {
+      font-size: 16px;
+      padding: 18px 12px;
+    }
+
+    .dropdown-menu .dropdown-item {
+      font-size: 16px;
+      padding: 12px;
+    }
+  }
+}
+
+
+.group-header {
+  font-weight: bold;
+  color: $brand-600;
+  margin: 10px;
+}
+
+.dropdown-menu.small .dropdown-item {
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+
+.dropdown-menu.medium .dropdown-item {
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.dropdown-menu.large .dropdown-item {
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px;
+}

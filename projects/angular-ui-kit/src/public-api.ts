@@ -27,3 +27,4 @@ export * from './lib/components/popover-button/popover-button.component';
 export * from './lib/components/loading-spinner/loading-spinner.component';
 export * from './lib/components/progress-bar/progress-bar.component';
 export * from './lib/components/informational-toast/informational-toast.component';
+export * from './lib/components/custom-multi-select-drop-down-with-items-selected-counter/custom-multi-select-drop-down-with-items-selected-counter.component';

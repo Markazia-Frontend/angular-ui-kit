@@ -57,6 +57,7 @@ export class ButtonComponent {
   @Input() mode: 'default' | 'hover' | 'loading' | 'disabled' = 'default';
   @Input() iconPosition: 'left' | 'right' | 'none' = 'none';
   @Input() IsTextButton?: boolean = false;
+  @Input() LoadingColor?: 'white' | 'gray' = 'gray';
   
   /**
    * Accepts an SVG string or null for the button's icon.
@@ -102,9 +103,11 @@ export class ButtonComponent {
     return {
       disabled: this.disabled ?? false,
       TextButton: this.IsTextButton ?? false,
+      'icon-only-button': !this.label,
       [this.type]: true,
       [this.size]: true,
       [this.mode]: true,
     };
   }
+  
 }

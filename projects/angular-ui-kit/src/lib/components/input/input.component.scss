@@ -1,6 +1,6 @@
 @import '../../styles/_colors.scss';
 
-$input-padding-small: 10px;
+$input-padding-small: 8px 10px;
 $input-padding-medium: 12px;
 $input-padding-big: 18px 12px;
 
@@ -26,6 +26,8 @@ $input-padding-big: 18px 12px;
   font-size: 16px;
   outline: none;
   width: 100%; 
+  color: $brand-700;
+  padding-right: 0 !important;
 
   &:focus{
     outline: 2px solid $brand-100;
@@ -92,7 +94,7 @@ $input-padding-big: 18px 12px;
   }
 
   &.input-icon-right {
-    right: 10px;
+    right: 8px;
   }
 }
 

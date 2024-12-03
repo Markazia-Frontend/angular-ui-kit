@@ -42,7 +42,7 @@ button.option  {
 }
 
 button.option:hover {
-  background-color: #C7D2FE;
+  background-color: $brand-100;
 }
 
 .options-container {
@@ -51,7 +51,7 @@ button.option:hover {
 
 button.option {
   color: #0F172A;
-  padding: 10px 16px;
+  padding: 8px;
 }
 
 div#dropdown-phone {

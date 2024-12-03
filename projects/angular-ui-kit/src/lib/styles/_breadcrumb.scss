@@ -18,7 +18,7 @@ $breadcrumb-active-color: red;
     &__item {
       font-size: 14px;
       color: $breadcrumb-color;
-      padding: 10px;
+      padding: 12px;
       display: inline-flex;
       align-items: center;
   
@@ -38,7 +38,7 @@ $breadcrumb-active-color: red;
       font-size: 14px;
       width: 20px;
       height: 20px;
-      
+
       // Use pseudo-element for the content
       &::before {
         content: url(../assets/icons/cheveron-right.svg);

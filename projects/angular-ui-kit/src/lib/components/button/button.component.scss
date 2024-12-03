@@ -10,7 +10,7 @@
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s;
   margin: 4px;
-  gap: 7px;
+  gap: 8px;
 
   &.cursor-not-allowed {
     cursor: not-allowed;
@@ -22,18 +22,27 @@
 
   /* Button Sizes */
   &.small {
-    font-size: 14px;
+    font-size: 12px;
     padding: 8px 12px;
+    &.icon-only-button {
+      padding: 7.67px;
+    }
   }
 
   &.medium {
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 16px;
+    &.icon-only-button {
+      padding: 11.67px;
+    }
   }
 
   &.big {
-    font-size: 18px;
+    font-size: 16px;
     padding: 16px;
+    &.icon-only-button {
+      padding: 19.67px;
+    }
   }
 
   /* Button Types */
@@ -143,7 +152,7 @@
   background-color: transparent !important;
   color: $brand-500;
   padding: 0;
-  
+
   &:hover {
     color: $brand-700;
   }
@@ -171,4 +180,8 @@
   path {
     fill: $brand-400 !important;
   }
+}
+
+.lib-btn.loading:hover {
+  background-color: $brand-200 !important;
 }

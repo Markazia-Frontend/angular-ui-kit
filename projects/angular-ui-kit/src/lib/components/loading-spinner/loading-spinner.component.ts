@@ -21,4 +21,12 @@ import { Component, Input } from '@angular/core';
 })
 export class LoadingSpinnerComponent {
   @Input() isDarkBackground?:boolean = false;
+  @Input() LoadingColor?:'white'|'gray' = 'gray';
+
+  getLoadingBackgroundClass(): Record<string, boolean> {
+    return {
+      'loading-background-white': this.LoadingColor === 'white',
+      'loading-background-gray': this.LoadingColor === 'gray',
+    };
+  }
 }

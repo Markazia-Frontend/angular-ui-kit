@@ -25,6 +25,10 @@
             linear-gradient(#000 0 0) content-box;
         box-sizing: border-box;
         animation: spin 1s linear infinite;
+
+        &.loading-background-white {
+            background: linear-gradient(180deg, #FFFFFF 100%, rgba(98, 98, 98, 0) 90%);
+        }
     }
 }
 

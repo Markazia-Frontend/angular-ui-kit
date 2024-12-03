@@ -86,20 +86,36 @@ export class PasswordComponent {
 
   /**
    * Calculate the strength of the password based on its length and complexity.
+   * - Requires at least one uppercase letter, one special character, and a minimum of 8 characters.
    * @param password - The entered password.
    * @returns 'weak' | 'medium' | 'good' | 'great' - The strength of the password.
    */
   calculateStrength(password: string): 'weak' | 'medium' | 'good' | 'great' {
-    if (password.length < 6) {
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const isLongEnough = password.length >= 8;
+
+    if (!isLongEnough) {
       return 'weak';
-    } else if (password.length >= 6 && password.length < 8) {
+    }
+
+    const strengthCriteria = [
+      isLongEnough,
+      hasUpperCase,
+      hasSpecialChar,
+    ].filter(Boolean).length;
+
+    if (strengthCriteria === 1) {
       return 'medium';
-    } else if (password.length >= 8 && password.length < 12) {
+    } else if (strengthCriteria === 2) {
       return 'good';
-    } else {
+    } else if (strengthCriteria === 3) {
       return 'great';
     }
+
+    return 'weak'; 
   }
+
 
   /**
    * Map password strength to a corresponding progress bar percentage.

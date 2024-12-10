@@ -1,3 +1,11 @@
+// Example Usage
+// <div class="avatars" style="display: flex; gap: 10px;">
+//     <img class="avatar avatar--sm" src="https://i.pinimg.com/736x/89/90/48/899048ab0cc455154006fdb9676964b3.jpg" alt="">
+//     <img class="avatar avatar--base" src="https://i.pinimg.com/736x/89/90/48/899048ab0cc455154006fdb9676964b3.jpg" alt="">
+//     <img class="avatar avatar--lg" src="https://i.pinimg.com/736x/89/90/48/899048ab0cc455154006fdb9676964b3.jpg" alt="">
+//     <img class="avatar avatar--xl" src="https://i.pinimg.com/736x/89/90/48/899048ab0cc455154006fdb9676964b3.jpg" alt="">
+// </div>
+
 $avatar-sizes: (
   sm: 32px,
   base: 48px,

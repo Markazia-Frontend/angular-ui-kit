@@ -1,3 +1,20 @@
+// Usage Example:
+//
+// <div>
+//     <input type="radio" id="radio-1" name="custom-radio" class="radio" />
+//     <label for="radio-1">Default radio</label>
+// </div>
+// <br>
+// <div>
+//     <input type="radio" id="radio-2" name="custom-radio" class="radio" checked />
+//     <label for="radio-2">Checked radio</label>
+// </div>
+// <br>
+// <div>
+//     <input type="radio" id="radio-3" name="custom-radio" class="radio custom-color" checked />
+//     <label for="radio-3">Custom Color radio</label>
+// </div>
+
 @import './colors';
 
 // Variables
@@ -57,7 +74,7 @@ $radio-dot-color: white; // Inner dot color
         &+label {
             &:before {
                 box-shadow: none;
-                background: $radio-selected; // Controlled background color
+                background: $radio-selected;
             }
 
             &:after {

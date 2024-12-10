@@ -1,9 +1,0 @@
-@import '../styles/colors';
-
-.lib-progress-bar-container {
-    height: 4px;
-
-    & .lib-progress-bar {
-        background-color: $brand-600;
-    }
-}

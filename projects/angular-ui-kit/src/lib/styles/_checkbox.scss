@@ -1,3 +1,23 @@
+// Usage Example:
+//
+// <div class="form-checkbox">
+// <input class="checkbox" type="checkbox" id="checkbox1">
+// <label for="checkbox1" tabindex="1">Shawn Carter</label>
+// </div>
+// <div class="form-checkbox">
+// <input class="checkbox" type="checkbox" id="checkbox2" checked="checked">
+// <label for="checkbox2" tabindex="2">Beyonce Knowles</label>
+// </div>
+// <div class="form-checkbox">
+// <input class="checkbox" type="checkbox" id="checkbox3" checked="checked" disabled="disabled">
+// <label for="checkbox3" tabindex="3">Christopher Wallace</label>
+// </div>
+// <div class="form-checkbox">
+// <input class="checkbox" type="checkbox" id="checkbox4" disabled="disabled">
+// <label for="checkbox4" tabindex="4">Tupac Shakur</label>
+// </div>
+
+
 @import './colors';
 
 // Variables
@@ -100,7 +120,6 @@ $checkbox-selected:$brand-700 ;
     }
   }
 }
-
 
 .form-checkbox {
   display: flex;

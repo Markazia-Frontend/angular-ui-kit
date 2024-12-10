@@ -1,3 +1,19 @@
+/* Example Usage:
+<label>
+  <input type="checkbox" class="toggle-input" />
+  <span class="toggle"></span>
+</label>
+
+With additional text:
+<div class="toggle-container">
+  <label>
+    <input type="checkbox" class="toggle-input" />
+    <span class="toggle"></span>
+  </label>
+  <span class="text">Enable feature</span>
+</div>
+*/
+
 @import './_colors.scss';
 
 $toggle-width: 48px;

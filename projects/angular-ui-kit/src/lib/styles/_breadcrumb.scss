@@ -1,3 +1,18 @@
+// Example Usage 
+// <nav aria-label="breadcrumb">
+//     <ul class="breadcrumb">
+//         <li class="breadcrumb__item">
+//             <a href="/">Home</a>
+//         </li>
+//         <li class="breadcrumb__divider"></li>
+//         <li class="breadcrumb__item">
+//             <a href="/category">Category</a>
+//         </li>
+//         <li class="breadcrumb__divider"></li>
+//         <li class="breadcrumb__item breadcrumb__item--active">Current Page</li>
+//     </ul>
+// </nav>
+
 
 @import './_colors.scss';
 
@@ -41,7 +56,7 @@ $breadcrumb-active-color: red;
 
       // Use pseudo-element for the content
       &::before {
-        content: url(../assets/icons/cheveron-right.svg);
+        content: url(http://felibrary.markaziaapps.com/icons/cheveron-right.svg);
         display: inline-block;
       }
     }

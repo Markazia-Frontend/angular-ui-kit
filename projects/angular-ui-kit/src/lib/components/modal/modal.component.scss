@@ -1,4 +1,4 @@
-@import '../../styles/_colors.scss';
+@import '../../styles/colors';
 
 .modal-backdrop {
     position: fixed;
@@ -16,7 +16,6 @@
 .modal-container {
     background: #fff;
     border-radius: 20px;
-    overflow: hidden;
     max-width: 90%;
     animation: fadeIn 0.3s ease-in-out;
     box-shadow: 0px 20px 50px 0px #121B2133;
@@ -61,7 +60,6 @@
     padding: 0 32px;
     color: $brand-700;
     font-size: 14px;
-    margin-top: 12px;
 }
 
 .modal-footer {
@@ -71,6 +69,7 @@
     justify-content: right;
     gap: 8px;
 }
+
 
 .modal-footer div {
     display: flex;

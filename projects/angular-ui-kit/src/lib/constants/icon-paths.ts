@@ -20,4 +20,8 @@ export const ICONS = {
     download: `${IMAGE_BASE_URL}/download.svg`,
     grid: `${IMAGE_BASE_URL}/grid.svg`,
     file: `${IMAGE_BASE_URL}/file.svg`,
+    date: `${IMAGE_BASE_URL}/date.svg`,
+    dotsHorizantalIcon: `${IMAGE_BASE_URL}/dots-horizontal.svg`,
+    arrowDownIcon: `${IMAGE_BASE_URL}/cheveron-down.svg`,
+    searchIcon: `${IMAGE_BASE_URL}/search-t-i.svg`
 };

@@ -63,6 +63,11 @@ export class ModalComponent implements OnInit {
   @Input() width: string = '500px';
 
   /**
+ * @Input minHeight: Customizable minHeight of the modal (e.g., '500px', '80%').
+ */
+  @Input() minHeight?: string;
+
+  /**
    * @Output close: Emits an event when the modal is closed.
    */
   @Output() close: EventEmitter<void> = new EventEmitter<void>();

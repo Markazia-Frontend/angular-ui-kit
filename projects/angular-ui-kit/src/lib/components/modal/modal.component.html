@@ -1,5 +1,5 @@
 <div *ngIf="isOpen" class="modal-backdrop">
-    <div class="modal-container" [style.width]="width">
+    <div class="modal-container" [ngStyle]="{ 'min-height': minHeight, 'width': width }">
         <div class="modal-header">
             <h3>{{ title }}</h3>
             <button class="close-button" (click)="handleClose()">&#x2715;</button>

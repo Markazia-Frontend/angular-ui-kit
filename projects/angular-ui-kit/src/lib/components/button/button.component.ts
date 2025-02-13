@@ -53,7 +53,7 @@ import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.comp
 })
 export class ButtonComponent {
   @Input() size: 'small' | 'medium' | 'big' = 'medium';
-  @Input() type: 'primary' | 'secondary' | 'tertiary' = 'primary';
+  @Input() btnType: 'primary' | 'secondary' | 'tertiary' = 'primary';
   @Input() mode: 'default' | 'hover' | 'loading' | 'disabled' = 'default';
   @Input() iconPosition: 'left' | 'right' | 'none' = 'none';
   @Input() IsTextButton?: boolean = false;
@@ -95,7 +95,7 @@ export class ButtonComponent {
       disabled: this.disabled ?? false,
       TextButton: this.IsTextButton ?? false,
       'icon-only-button': !this.label,
-      [this.type]: true,
+      [this.btnType]: true,
       [this.size]: true,
       [this.mode]: true,
     };

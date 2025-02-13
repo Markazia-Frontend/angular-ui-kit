@@ -1,0 +1,133 @@
+<div class="table-heading" *ngIf="tableTitleHeading">{{tableTitleHeading}}</div>
+<div class="numberOfCurrentRows"># Rows: {{numberOfCurrentRows}}</div>
+<div class="table-container" (scroll)="onScroll($event)" [style.overflow-x]="overflow_x"
+    [style.overflow-y]="overflow_y">
+    <table>
+        <thead>
+            <tr>
+                <!-- Header for the Checkbox Column -->
+                <th class="checkboxes-header">
+                    <button class="check-all-button" (click)="toggleSelectAllRows()">
+                        All
+                    </button>
+                </th>
+
+                <!-- Column Headers with Filters -->
+                <th *ngFor="let column of tableColumns; trackBy: trackByFn">
+                    <div class="header-filter">
+                        <span [ngClass]="{
+                            'column-header-date': column.filterType === 'date',
+                                'column-header-text': column.filterType === 'text',
+                                'column-header-dropdown': column.filterType === 'dropdown',
+                                'column-header': column.filterType === undefined
+                            }">{{ column.displayName }}</span>
+
+                        <!-- Search Icon to toggle text input -->
+                        <img width="20px" height="20px" class="searchIcon" *ngIf="column.filterType === 'text'" [src]="searchIcon" alt="Search"
+                            (click)="toggleSearch(column.name)" />
+
+                        <!-- Filter input or select based on column filterType -->
+                        <ng-container [ngSwitch]="column.filterType">
+                            <!-- Text Filter -->
+                            <ng-container *ngIf="column.filterType === 'text'">
+                                <input class="search-input" *ngIf="filterVisibility[column.name]"
+                                    [(ngModel)]="filterValues[column.name]" (ngModelChange)="filterData()"
+                                    placeholder="Search" />
+                            </ng-container>
+
+                            <ng-container *ngIf="column.filterType === 'date'">
+                                <lib-datepicker [withoutInput]="true"
+                                    (dateChange)="dateChange($event, column.name)"></lib-datepicker>
+                            </ng-container>
+
+                            <!-- Dropdown Filter -->
+                            <div *ngSwitchCase="'dropdown'" class="custom-dropdown">
+                                <div class="selected-option" (click)="toggleDropdown(column.name)">
+                                    <span class="column-name-select">{{ column.displayName }}</span>
+                                    <span class="arrow">
+                                        <img [src]="arrowDownIcon" alt="" />
+                                    </span>
+                                </div>
+
+                                <!-- Dropdown Menu -->
+                                <ul *ngIf="isDropdownOpen[column.name]" class="dropdown-menu">
+                                    <li *ngFor="let option of column.options; trackBy: trackByFn"
+                                        (click)="selectOption(option, column.name)">
+                                        {{ option }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </ng-container>
+                    </div>
+                </th>
+
+                <th class="dots">
+                    <img [src]="dotsHorizantalIcon" alt="dots Horizantal">
+                </th>
+            </tr>
+        </thead>
+        <tbody #scrollableContainer>
+            <!-- Data Rows -->
+            <tr *ngFor="let row of filteredData; let i = index; trackBy: trackByFn"
+                [ngClass]="{ 'even': i % 2 === 0, 'odd': i % 2 !== 0, 'clickable': isRowClickable }">
+                <!-- Checkbox for Each Row -->
+                <td>
+                    <div class="form-checkbox">
+                        <input (change)="onRowSelectionChange()" class="checkbox" type="checkbox" [id]="'checkbox' + i"
+                            [(ngModel)]="row.selected" />
+                        <label [for]="'checkbox' + i" tabindex="1"></label>
+                    </div>
+                </td>
+
+                <!-- Data Cells -->
+                <td (click)="onRowClick(row)" *ngFor="let column of tableColumns; trackBy: trackByFn">
+                    {{ row[column.name] ? row[column.name]:'N/A' }}
+                </td>
+
+                <td class="dots" (click)="toggleMenu(i)">
+                    <img [src]="dotsHorizantalIcon" alt="dots Horizantal">
+                    <div class="context-menu" *ngIf="activeMenuIndex === i">
+                        <button (click)="exportItem(i)">Export</button>
+                        <button *ngIf="withEditContextMenuButton" (click)="editItem(i)">Edit</button>
+                        <button (click)="deleteItem(i)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+
+            <!-- Empty State -->
+            <tr *ngIf="filteredData.length === 0 && !isLoading">
+                <td [attr.colspan]="tableColumns.length + 2" class="no-data">
+                    No data available
+                </td>
+            </tr>
+
+            <tr *ngIf="isLoading" class="loading-row">
+                <td colspan="100%">
+                    <div class="loading-container">
+                        <lib-loading-spinner [LoadingColor]="'gray'" [isDarkBackground]="false"></lib-loading-spinner>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+
+
+
+<lib-modal [minHeight]="'180px'" [isOpen]="isConfirmDeleteModalOpen" [title]="'Confirm Delete'" [width]="'32%'"
+    (close)="onDeleteModalClose()">
+    <div modal-body>
+        <div class="modal-body">
+            Are you Sure do you want to delete ?
+        </div>
+    </div>
+    <div modal-footer>
+        <div class="modal-button-container">
+            <lib-button [btnType]="'tertiary'" size="medium" [mode]="'default'" label="Discard"
+                (click)="onDeleteModalClose()"></lib-button>
+            <lib-button [btnType]="'primary'" size="medium" [mode]="'default'" label="Delete"
+                (click)="onDelete()"></lib-button>
+        </div>
+    </div>
+</lib-modal>

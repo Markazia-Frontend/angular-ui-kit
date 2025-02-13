@@ -8,25 +8,22 @@
 
   <!-- Icon-only button -->
   <ng-container *ngIf="isIconOnly; else content">
-    <span *ngIf="sanitizedIcon" class="icon" [innerHTML]="sanitizedIcon"></span>
-    <i *ngIf="!sanitizedIcon && icon" [class]="icon"></i>
+    <img class="icon" [src]="iconURL" alt="icon">
   </ng-container>
 
   <!-- Button with content -->
   <ng-template #content>
     <!-- Left Icon -->
-    <ng-container *ngIf="icon && iconPosition === 'left' && !isLoading">
-      <span *ngIf="sanitizedIcon" class="icon left" [innerHTML]="sanitizedIcon"></span>
-      <i *ngIf="!sanitizedIcon && icon" [class]="'icon left ' + icon"></i>
+    <ng-container *ngIf="iconURL && iconPosition === 'left' && !isLoading">
+     <img class="icon" [src]="iconURL" alt="icon">
     </ng-container>
 
     <!-- Label -->
     <span *ngIf="(!isIconOnly && label)">{{ label }}</span>
 
     <!-- Right Icon -->
-    <ng-container *ngIf="icon && iconPosition === 'right' && !isLoading">
-      <span *ngIf="sanitizedIcon" class="icon right" [innerHTML]="sanitizedIcon"></span>
-      <i *ngIf="!sanitizedIcon && icon" [class]="'icon right ' + icon"></i>
+    <ng-container *ngIf="iconURL && iconPosition === 'right' && !isLoading">
+      <img class="icon" [src]="iconURL" alt="icon">
     </ng-container>
 
       <!-- Loading Spinner -->

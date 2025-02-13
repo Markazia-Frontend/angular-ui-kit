@@ -77,10 +77,8 @@
       border-color: $brand-700;
       color: $brand-700;
 
-      svg {
-        path {
+      icon {
           fill: $brand-700 !important;
-        }
       }
     }
 
@@ -95,10 +93,6 @@
       color: $brand-400;
       border: none;
       cursor: auto;
-    }
-
-    .icon path {
-      fill: #626262;
     }
   }
 
@@ -140,11 +134,6 @@
     align-items: center;
     justify-content: center;
     margin-right: 0.5rem;
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
   }
 }
 
@@ -159,26 +148,6 @@
 
   &:disabled {
     color: $brand-400;
-    path {
-      fill: $brand-400;
-    }
-  }
-
-  path {
-    fill: $brand-500;
-  }
-}
-
-.lib-btn.TextButton:hover path {
-  fill: $brand-700;
-}
-
-.lib-btn.disabled {
-  svg {
-    color: $brand-400;
-  }
-  path {
-    fill: $brand-400 !important;
   }
 }
 

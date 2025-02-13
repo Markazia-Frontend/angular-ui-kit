@@ -59,20 +59,8 @@ export class ButtonComponent {
   @Input() IsTextButton?: boolean = false;
   @Input() LoadingColor?: 'white' | 'gray' = 'gray';
   
-  /**
-   * Accepts an SVG string or null for the button's icon.
-   */
-  private _icon: string | null = null;
-  sanitizedIcon: SafeHtml | null = null;
+  @Input() iconURL?='';
 
-  @Input() set icon(value: string | null) {
-    this._icon = value;
-    this.sanitizedIcon = value ? this.sanitizer.bypassSecurityTrustHtml(value) : null;
-  }
-
-  get icon(): string | null {
-    return this._icon;
-  }
 
   @Input() label: string = '';
   @Input() isLoading: boolean = false;
@@ -80,7 +68,10 @@ export class ButtonComponent {
   @Input() tooltip: string | null = null;
   @Output() click = new EventEmitter<void>();
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer) {
+    console.log(this.iconURL);
+    
+  }
 
   /**
    * Emits the click event when the button is clicked, provided the button is not disabled or in loading state.
@@ -96,7 +87,7 @@ export class ButtonComponent {
    * @returns {boolean} True if the button has no label and has an icon.
    */
   get isIconOnly() {
-    return !this.label && this.icon;
+    return !this.label && this.iconURL;
   }
 
   getButtonClasses(): Record<string, boolean> {
